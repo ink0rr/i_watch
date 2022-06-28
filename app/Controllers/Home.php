@@ -4,8 +4,15 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    public function __construct() {
+        // parent::__construct();
+    }
     public function index()
     {
-        return view('welcome_message');
+        $data['title'] = "IOO Watch";
+        
+        return view('templates/header', $data)
+        . view('homepage')
+        . view('templates/footer');
     }
 }

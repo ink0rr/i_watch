@@ -46,8 +46,8 @@
 
     <!-- sticky navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top sticky-navbar shadow-sm mb-5 bg-body rounded" style="transform:translateY(-76px);">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+        <div class="container">
+            <a class="navbar-brand sticky-item" href="#">
                 <img src="<?=base_url('assets/logo_icon.png')?>" alt="IOO Watch">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerSticky" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,18 +55,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerSticky">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
                         <a class="nav-link active" href="#">Tentang Kami</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
                         <a class="nav-link active" href="#">Perlu Bantuan</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 ">
-                    <li class="nav-item">
+                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
                         <a class="nav-link active" href="#">Daftar</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
                         <a class="nav-link active" href="#">Masuk</a>
                     </li>
                 </ul>
@@ -75,12 +75,9 @@
     </nav>
     </header>
     <script type="text/javascript">
-
         $(window).scroll(function() {
         
         var scroll = $(window).scrollTop();
-        var sticky = $('.sticky-navbar');
-        
         if (scroll >= 490) { 
             anime({
                 duration: 100,
@@ -88,16 +85,28 @@
                 translateY: 0,
                 easing: 'easeInSine'
             });
-        }else { 
-            // toggleDisplay('none');
             anime({
-                        duration: 100,
-                        targets: '.sticky-navbar',
-                        translateY: -76,
-                        easing: 'easeOutSine'
-                    });
-            setTimeout(() => {
-            }, 100);
+                targets: '.sticky-item',
+                translateY: 0,
+                direction: 'normal',
+                delay: function(el, i, l) {
+                    return i * 25;
+                },
+                endDelay: function(el, i, l) {
+                    return (l - i) * 25;
+                }
+            });
+        }else { 
+            anime({
+                duration: 100,
+                targets: '.sticky-navbar',
+                translateY: -76,
+                easing: 'easeOutSine'
+            });
+            anime({
+                targets: '.sticky-item',
+                translateY: -76
+            });
         }
     });
     </script>

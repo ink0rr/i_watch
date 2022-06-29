@@ -1,7 +1,6 @@
 <div class="position-absolute" style="width:100%; height:400px; background-color:#B25068; position:absolute;">
 
 </div>
-
 <br>
 <br>
 <br>

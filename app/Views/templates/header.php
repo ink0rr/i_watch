@@ -50,7 +50,7 @@
             <a class="navbar-brand sticky-item" href="#">
                 <img src="<?=base_url('assets/logo_icon.png')?>" alt="IOO Watch">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerSticky" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler sticky-item" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerSticky" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerSticky">

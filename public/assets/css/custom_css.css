@@ -1,0 +1,36 @@
+/* for homepage slider */
+.movie-thumbnail {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.slick-slide{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+.slick-prev:before {
+    content: "<";
+    font-size: 30px !important;
+    color:whitesmoke !important;
+}
+
+.slick-next:before {
+    content: ">";
+    font-size: 30px !important;
+    color:whitesmoke !important;
+}
+
+.slick-prev, .slick-next {
+    z-index: 1;
+}
+
+.slick-prev {
+    margin-left: 20px !important;
+}
+.slick-next {
+    margin-right: 30px !important;
+}
+
+/* end for homepage slider */

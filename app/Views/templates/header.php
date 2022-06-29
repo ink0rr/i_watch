@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=esc($title)?></title>
-    <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/bootstrap.css')?>"/>
     <link rel="icon" href="<?=base_url('assets/logo-16x16.png')?>" type="image">
-    <script src="<?=base_url('assets/js/bootstrap.js')?>"></script>
+    <title><?=esc($title)?></title>
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/custom_css.css')?>"/>
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/mdb.min.css')?>"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <script src="<?=base_url('assets/js/mdb.min.js')?>"></script>
     <script src="<?=base_url('assets/js/anime.min.js')?>"></script>
-    <script src="<?=base_url('assets/js/jquery.js')?>"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<?=base_url('assets/js/slick.min.js')?>"></script>
 </head>
 <body>
     <header>
@@ -45,7 +51,7 @@
     </nav>
 
     <!-- sticky navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top sticky-navbar shadow-sm mb-5 bg-body rounded" style="transform:translateY(-76px);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top sticky-navbar shadow-sm mb-5 bg-body rounded" style="transform:translateY(-77px);">
         <div class="container">
             <a class="navbar-brand sticky-item" href="#">
                 <img src="<?=base_url('assets/logo_icon.png')?>" alt="IOO Watch">
@@ -55,18 +61,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerSticky">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
+                    <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                         <a class="nav-link active" href="#">Tentang Kami</a>
                     </li>
-                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
+                    <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                         <a class="nav-link active" href="#">Perlu Bantuan</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 ">
-                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
+                    <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                         <a class="nav-link active" href="#">Daftar</a>
                     </li>
-                    <li class="nav-item sticky-item" style="transform:translateY(-76px);">
+                    <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                         <a class="nav-link active" href="#">Masuk</a>
                     </li>
                 </ul>
@@ -100,12 +106,12 @@
             anime({
                 duration: 100,
                 targets: '.sticky-navbar',
-                translateY: -76,
+                translateY: -77,
                 easing: 'easeOutSine'
             });
             anime({
                 targets: '.sticky-item',
-                translateY: -76
+                translateY: -77
             });
         }
     });

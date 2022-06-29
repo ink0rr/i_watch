@@ -8,7 +8,9 @@
     <title><?=esc($title)?></title>
     <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/custom_css.css')?>"/>
     <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/mdb.min.css')?>"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/slick.css')?>"/>
+    <!-- <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/slick-theme.css')?>"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <script src="<?=base_url('assets/js/mdb.min.js')?>"></script>

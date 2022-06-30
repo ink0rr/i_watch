@@ -9,9 +9,10 @@
     <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/custom_css.css')?>"/>
     <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/mdb.min.css')?>"/>
     <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/slick.css')?>"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link  rel="stylesheet" type="text/css" href="<?=base_url('assets/css/slick-theme.css')?>"/> -->
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <script src="<?=base_url('assets/js/mdb.min.js')?>"></script>
     <script src="<?=base_url('assets/js/anime.min.js')?>"></script>

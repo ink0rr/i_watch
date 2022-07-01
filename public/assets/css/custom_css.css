@@ -2,13 +2,21 @@
  .top-bg{
     width:100%;
     height:410px;
-    background-color:#B25068;
+    background-color: #371B58;
  }
     /* end for top background  */
 /* for homepage slider */
+.slider{
+    margin: 0 auto;
+    padding-right: 40px;
+    padding-left: 40px;
+    width: 80%;
+}
+
 .movie-thumbnail {
     max-width: 100%;
     border-radius: 8px;
+    margin: 0 auto;
 }
 
 .slick-slide{
@@ -40,13 +48,19 @@
     margin-right: 30px !important;
 }
 
+.slick-dots li button:before {
+    color: white !important;
+  }
+
 /* end for homepage slider */
 
-/* for homepage input  */
+/* for homepage cari-bioskop  */
+#cari-bioskop .card-header{
+    background-color: #4C3575;
+}
 .check-select {
-    border: 2px solid #ED4646 !important;
+    border: 2px solid #371B58 !important;
     border-radius: 15px !important;
-    background-color: #f8b0b0 !important;
 }
 
 .check-select option{
@@ -60,6 +74,97 @@
 }
 
 .check-button {
+    padding: 12 5;
+    margin:0 auto;
     width:100%;
-    background-color: #D67C76 !important;
+    background-color: #371B58 !important;
 }
+
+/* end for homepage cari-bioskop */
+
+/* for spotlight */
+.card-spotlight {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.card-spotlight img {
+    max-width: 100%;
+}
+  
+.card-spotlight .img-flex {
+    margin: 0 auto;
+    width:100%;
+    height:auto;
+}
+  
+.card-spotlight .middle-title {
+    /* text-align: center; */
+    text-align: left;
+    padding-top: 10px;
+    padding-right: 5px;
+}
+  
+.card-spotlight .middle-title a {
+    color: #040404;
+}
+  
+.card-spotlight .middle-title a:hover {
+    text-decoration: none;
+    color: #6e6d6d;
+}
+  
+.card-spotlight .middle-title,
+.card-spotlight .middle-subtitle,
+.card-spotlight .middle-news {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+  
+.card-spotlight .middle-news {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+#spotlight .slick-prev:before {
+    font-size: 30px !important;
+    color:black !important;
+}
+
+#spotlight .slick-next:before {
+    font-size: 30px !important;
+    color:black !important;
+}
+
+
+/* end for spotlight */
+
+/* for our member */
+.our-member-bg {
+    background-color: #371B58;
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }

@@ -24,7 +24,7 @@
     <header>
 
     <!-- static navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#B25068;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#371B58;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="<?=base_url('assets/logo.png')?>" alt="IOO Watch" width="227" height="58">

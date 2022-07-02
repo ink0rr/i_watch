@@ -323,8 +323,8 @@
     </div>
     </section>
 
-    <section id="our-member">
-        <div class="our-member-bg mt-4">
+    <section id="anggota-kami">
+        <div class="anggota-kami-bg mt-4">
         <div class="container pt-5">
             <div class="row mb-4">
                 <h3 class="fw-bold text-center text-white">Anggota Kami</h3>

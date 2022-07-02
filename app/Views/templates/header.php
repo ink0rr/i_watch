@@ -24,9 +24,9 @@
     <header>
 
     <!-- static navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#371B58;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#4C3575;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?=base_url();?>">
                 <img src="<?=base_url('assets/logo.png')?>" alt="IOO Watch" width="227" height="58">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerStatic" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                     <a class="nav-link active" href="#">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Perlu Bantuan</a>
+                    <a class="nav-link active" href="#footer">Perlu Bantuan</a>
                 </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
@@ -56,7 +56,7 @@
     <!-- sticky navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top sticky-navbar shadow-sm mb-5 bg-body rounded" style="transform:translateY(-77px);">
         <div class="container">
-            <a class="navbar-brand sticky-item" href="#">
+            <a class="navbar-brand sticky-item" href="<?=base_url();?>">
                 <img src="<?=base_url('assets/logo_icon.png')?>" alt="IOO Watch">
             </a>
             <button class="navbar-toggler sticky-item" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerSticky" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
                         <a class="nav-link active" href="#">Tentang Kami</a>
                     </li>
                     <li class="nav-item sticky-item" style="transform:translateY(-77px);">
-                        <a class="nav-link active" href="#">Perlu Bantuan</a>
+                        <a class="nav-link active" href="#footer">Perlu Bantuan</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 ">

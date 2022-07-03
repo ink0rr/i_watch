@@ -381,7 +381,7 @@
         </div>
     </section>
     <script type="text/javascript">
-        $(document).ready(function() {
+        jQuery(function() {
             $('.slider').slick({
                 infinite: true,
                 centerMode: true,

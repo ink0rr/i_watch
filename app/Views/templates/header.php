@@ -88,7 +88,7 @@
             if (scroll >= 490) {
                 anime({
                     duration: 100,
-                    targets: ".sticky-navbar",
+                    targets: '.sticky-navbar',
                     translateY: 0,
                     easing: 'easeInSine',
                 });

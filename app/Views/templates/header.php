@@ -8,18 +8,15 @@
     <link rel="icon" href="<?= base_url('assets/logo-16x16.png') ?>" type="image">
     <title><?= esc($title) ?></title>
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/custom_css.css') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/mdb.min.css') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/slick.css') ?>" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link  rel="stylesheet" type="text/css" href="<?= base_url('assets/css/slick-theme.css') ?>"/> -->
-    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-    <script src="<?= base_url('assets/js/mdb.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/anime.min.js') ?>"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="<?= base_url('assets/js/slick.min.js') ?>"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -86,15 +83,14 @@
         </nav>
     </header>
     <script type="text/javascript">
-        $(window).scroll(function() {
-
-            var scroll = $(window).scrollTop();
+        $(window).on("scroll", function() {
+            const scroll = $(window).scrollTop();
             if (scroll >= 490) {
                 anime({
                     duration: 100,
-                    targets: '.sticky-navbar',
+                    targets: ".sticky-navbar",
                     translateY: 0,
-                    easing: 'easeInSine'
+                    easing: 'easeInSine',
                 });
                 anime({
                     targets: '.sticky-item',
@@ -105,18 +101,18 @@
                     },
                     endDelay: function(el, i, l) {
                         return (l - i) * 25;
-                    }
+                    },
                 });
             } else {
                 anime({
                     duration: 100,
                     targets: '.sticky-navbar',
                     translateY: -77,
-                    easing: 'easeOutSine'
+                    easing: 'easeOutSine',
                 });
                 anime({
                     targets: '.sticky-item',
-                    translateY: -77
+                    translateY: -77,
                 });
             }
         });

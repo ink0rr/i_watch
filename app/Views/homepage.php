@@ -392,7 +392,7 @@
                 dots: true,
                 zindex: 1,
                 slidesToShow: 4,
-                slidesToScroll: 1
+                slidesToScroll: 1,
             });
         });
     </script>

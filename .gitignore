@@ -119,7 +119,7 @@ nb-configuration.xml
 /api/
 
 # Visual Studio Code
-.vscode/
+# .vscode/
 
 /results/
 /phpunit*.xml

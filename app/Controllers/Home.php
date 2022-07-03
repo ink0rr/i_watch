@@ -2,17 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Models;
+
 class Home extends BaseController
 {
-    public function __construct() {
-        // parent::__construct();
-    }
-    public function index()
+    public function index(): string
     {
-        $data['title'] = "IOO Watch";
-        
+
+        $movies = model(Models\Movies::class);
+        $data['movies'] = $movies->findAll();
+
+        $data['title'] = 'IOO Watch';
         return view('templates/header', $data)
-        . view('homepage')
-        . view('templates/footer');
+            . view('homepage')
+            . view('templates/footer');
     }
 }

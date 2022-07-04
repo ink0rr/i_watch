@@ -48,12 +48,5 @@
 
     </section>
 </footer>
-<script src="text/javascript">
-    function copyToClipboard(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-    }
-</script>
+</body>
+</html>

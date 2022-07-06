@@ -17,6 +17,7 @@ class Movies extends BaseController
 
         $data['title'] = $data['movie']['title'];
         return view('templates/header', $data)
-            . view('movie');
+            . view('movie')
+            . view('templates/footer');
     }
 }

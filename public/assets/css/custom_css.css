@@ -1,15 +1,17 @@
 html {
     scroll-padding-top: 76.6px;
 }
+
 /* for top background */
- .top-bg{
-    width:100%;
-    height:410px;
+.top-bg {
+    width: 100%;
+    height: 650px;
     background-color: #4C3575;
- }
-    /* end for top background  */
+}
+
+/* end for top background  */
 /* for homepage slider */
-.slider{
+.slider {
     margin: 0 auto;
     padding-right: 40px;
     padding-left: 40px;
@@ -22,7 +24,7 @@ html {
     margin: 0 auto;
 }
 
-.slick-slide{
+.slick-slide {
     margin-left: 8px;
     margin-right: 8px;
 }
@@ -31,42 +33,45 @@ html {
 .slick-prev:before {
     content: "<";
     font-size: 30px !important;
-    color:whitesmoke !important;
+    color: whitesmoke !important;
 }
 
 .slick-next:before {
     content: ">";
     font-size: 30px !important;
-    color:whitesmoke !important;
+    color: whitesmoke !important;
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
     z-index: 1;
 }
 
 .slick-prev {
     margin-left: 20px !important;
 }
+
 .slick-next {
     margin-right: 30px !important;
 }
 
 .slick-dots li button:before {
     color: white !important;
-  }
+}
 
 /* end for homepage slider */
 
 /* for homepage cari-bioskop  */
-#cari-bioskop .card-header{
+#cari-bioskop .card-header {
     background-color: #371B58;
 }
+
 .check-select {
     border: 2px solid #371B58 !important;
     border-radius: 15px !important;
 }
 
-.check-select option{
+.check-select option {
     background-color: white !important;
 }
 
@@ -78,8 +83,8 @@ html {
 
 .check-button {
     padding: 12 5;
-    margin:0 auto;
-    width:100%;
+    margin: 0 auto;
+    width: 100%;
     background-color: #4C3575 !important;
 }
 
@@ -100,36 +105,36 @@ html {
 .card-spotlight img {
     max-width: 100%;
 }
-  
+
 .card-spotlight .img-flex {
     margin: 0 auto;
-    width:100%;
-    height:auto;
+    width: 100%;
+    height: auto;
 }
-  
+
 .card-spotlight .middle-title {
     /* text-align: center; */
     text-align: left;
     padding-top: 10px;
     padding-right: 5px;
 }
-  
+
 .card-spotlight .middle-title a {
     color: #040404;
 }
-  
+
 .card-spotlight .middle-title a:hover {
     text-decoration: none;
     color: #6e6d6d;
 }
-  
+
 .card-spotlight .middle-title,
 .card-spotlight .middle-subtitle,
 .card-spotlight .middle-news {
     margin-top: 5px;
     margin-left: 10px;
 }
-  
+
 .card-spotlight .middle-news {
     text-align: left;
     word-wrap: break-word;
@@ -137,17 +142,17 @@ html {
 
 #spotlight .slick-prev:before {
     font-size: 30px !important;
-    color:black !important;
+    color: black !important;
 }
 
 #spotlight .slick-next:before {
     font-size: 30px !important;
-    color:black !important;
+    color: black !important;
 }
 
 #spotlight .slick-dots li button:before {
-    color:#371B58 !important;
-  }
+    color: #371B58 !important;
+}
 
 /* end for spotlight */
 
@@ -155,6 +160,7 @@ html {
 .anggota-kami-bg {
     background-color: #4C3575;
 }
+
 .social-link {
     width: 30px;
     height: 30px;
@@ -166,33 +172,76 @@ html {
     border-radius: 50%;
     transition: all 0.3s;
     font-size: 0.9rem;
-  }
-  
-  .social-link:hover,
-  .social-link:focus {
+}
+
+.social-link:hover,
+.social-link:focus {
     background: #ddd;
     text-decoration: none;
     color: #555;
-  }
+}
+
 /* end for member */
 
 /* for footer */
-.footer-text{
-    color : rgb(158, 155, 155);
+.footer-text {
+    color: rgb(158, 155, 155);
 }
 
-.footer-text:hover{
-    color:#371B58;
+.footer-text:hover {
+    color: #371B58;
 }
 
-.copyright-bg{
+.copyright-bg {
     background-color: #e3e3e3;
 }
 
-.copyright-text{
+.copyright-text {
     color: #4C3575;
 }
 
-a.copyright-text:hover{
+a.copyright-text:hover {
     color: #371B58;
+}
+
+/* end for footer */
+
+/* for authentication */
+/* .ease {
+    transform: translateY(-77px);
+} */
+
+.auth-bg {
+    background-color: rgb(240, 239, 239);
+}
+
+.form-outline .form-control:focus~.form-notch .form-notch-leading {
+    border-top: 1px solid #371B58;
+    border-bottom: 1px solid #371B58;
+    border-left: 1px solid #371B58;
+}
+
+.form-outline .form-control:focus~.form-notch .form-notch-middle {
+    border-top: 0px;
+    border-bottom: 1px solid;
+    border-color: #371B58;
+}
+
+.form-outline .form-control:focus~.form-notch .form-notch-trailing {
+    border-color: currentcolor currentcolor currentcolor #371B58;
+    border-bottom: 1px solid #371B58;
+    border-right: 1px solid #371B58;
+    border-top: 1px solid #371B58;
+}
+
+.form-outline .form-control:focus~.form-label {
+    color: #371B58;
+}
+
+.auth-button {
+    background-color: #4C3575;
+}
+
+.forget-password {
+    padding-top: 20px;
 }

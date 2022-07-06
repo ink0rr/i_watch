@@ -38,6 +38,11 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/movies/(:num)', 'Movies::index/$1');
 
+//auth sementara
+$routes->get('/login', 'Home::login');
+$routes->get('/register', 'Home::register');
+$routes->get('/lupa-password', 'Home::forgetPassword');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

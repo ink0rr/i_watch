@@ -42,10 +42,10 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Daftar</a>
+                            <a class="nav-link active" href="<?= base_url("/daftar") ?>">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Masuk</a>
+                            <a class="nav-link active" href="<?= base_url("/masuk") ?>">Masuk</a>
                         </li>
                     </ul>
                 </div>
@@ -72,10 +72,10 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 ">
                         <li class="nav-item sticky-item" style="transform:translateY(-77px);">
-                            <a class="nav-link active" href="#">Daftar</a>
+                            <a class="nav-link active" href="<?= base_url("/daftar") ?>">Daftar</a>
                         </li>
                         <li class="nav-item sticky-item" style="transform:translateY(-77px);">
-                            <a class="nav-link active" href="#">Masuk</a>
+                            <a class="nav-link active" href="<?= base_url("/masuk") ?>">Masuk</a>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +85,7 @@
     <script type="text/javascript">
         $(window).on("scroll", function() {
             const scroll = $(window).scrollTop();
-            if (scroll >= 490) {
+            if (scroll >= 690) {
                 anime({
                     duration: 100,
                     targets: '.sticky-navbar',

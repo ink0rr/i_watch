@@ -5,7 +5,9 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <!-- <a href="<?= base_url() ?>" class="text-white" style=" letter-spacing: 1px;"><span class="position-absolute px-3 py-2"><i class="fa-solid fa-chevron-left"></i> kembali ke halaman utama</span></a> -->
                             <img src="<?= base_url('assets/images/login-background.png') ?>" alt="login-image" class="img-fluid" style="border-top-left-radius: 9px; border-bottom-left-radius: 9px;" />
+                            <a href="<?= base_url() ?>" class="text-decoration-none" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> kembali ke homepage</span></a>
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
@@ -13,7 +15,7 @@
                                 <form action="#" method="GET">
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
-                                        <span class="h1 fw-bold mb-0"><img src="<?= base_url('assets/logo-dark.png') ?>" alt="IOO Watch" width="224" height="55"></span>
+                                        <img src="<?= base_url('assets/logo-dark.png') ?>" alt="IOO Watch" width="224" height="55">
                                     </div>
 
                                     <h5 class="fw-light mb-3 pb-3" style="letter-spacing: 1px;">Hiburan serumu dimulai disini.</h5>
@@ -37,7 +39,7 @@
                                 </form>
 
                                 <div class="forget-password text-center">
-                                    <p class="fw-light">Belum punya akun? <a href="<?= base_url("/register") ?>">Daftar</a></p>
+                                    <p class="fw-light">Belum punya akun? <a href="<?= base_url("/daftar") ?>">Daftar</a></p>
                                 </div>
                             </div>
                         </div>

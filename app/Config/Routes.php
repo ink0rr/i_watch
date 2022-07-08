@@ -39,9 +39,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/movies/(:num)', 'Movies::index/$1');
 
 //auth sementara
-$routes->get('/login', 'Home::login');
-$routes->get('/register', 'Home::register');
-$routes->get('/lupa-password', 'Home::forgetPassword');
+$routes->get('/masuk', 'Auth::login');
+$routes->get('/daftar', 'Auth::register');
+$routes->get('/lupa-password', 'Auth::forgetPassword');
 
 /*
  * --------------------------------------------------------------------

@@ -6,6 +6,7 @@
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
                             <img src="<?= base_url('assets/images/forget-password-background.png') ?>" alt="login-image" class="img-fluid" style="border-top-left-radius: 9px; border-bottom-left-radius: 9px;" />
+                            <a href="<?= base_url() ?>" class="text-decoration-none" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> kembali ke homepage</span></a>
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
@@ -29,7 +30,7 @@
                                 </form>
 
                                 <div class="forget-password text-center">
-                                    <p class="fw-light"><a href="<?= base_url("/login") ?>">Kembali</a></p>
+                                    <p class="fw-light"><a href="<?= base_url("/masuk") ?>">Kembali</a></p>
                                 </div>
                             </div>
                         </div>

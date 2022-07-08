@@ -207,9 +207,6 @@ a.copyright-text:hover {
 /* end for footer */
 
 /* for authentication */
-/* .ease {
-    transform: translateY(-77px);
-} */
 
 .auth-bg {
     background-color: rgb(240, 239, 239);
@@ -240,6 +237,11 @@ a.copyright-text:hover {
 
 .auth-button {
     background-color: #4C3575;
+}
+
+.auth-back-button:hover {
+    color: #4C3575;
+    text-shadow: 2px 2px 10px;
 }
 
 .forget-password {

@@ -35,8 +35,8 @@
                 <div class="col-md-3 mx-auto mb-md-0 mb-4">
                     <p class="footer-text fw-bold text-muted">BANTUAN I<img src="<?= base_url('assets/logo_icon.png') ?>" style="height:20px; margin-bottom:2px;" alt="OO">WATCH</p>
                     <p><i class="fas fa-envelope me-3"></i><a class="footer-text fw-bold" href="mailto:help@i_watch.com">HELP@I_WATCH.ID</a></p>
-                    <p><i class="fas fa-phone me-3"></i><a class="footer-text fw-bold" href="tel:021987654321">+21 9876 54321</a></p>
-                    <p><i class="fa-brands fa-whatsapp fa-lg me-3"></i><a class="footer-text fw-bold" href="https://alvo.chat/3yV">+62 812 3456 7890</a></p>
+                    <p><i class="fas fa-phone me-3"></i><a class="footer-text fw-bold" href="tel:+6221987654321">021-987654321</a></p>
+                    <p><i class="fa-brands fa-whatsapp fa-lg me-3"></i><a class="footer-text fw-bold" href="https://wa.me/6281234567890">081234567890</a></p>
                 </div>
             </div>
         </div>

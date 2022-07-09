@@ -5,7 +5,7 @@
                 <div class="col-md-4 mx-auto mb-4">
                     <img src="<?= base_url('assets/logo-dark.png') ?>" alt="IOO Watch" width="227" height="58">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum vehicula ante, sit amet eleifend odio euismod nec. Phasellus in tellus a turpis ornare feugiat. Praesent vitae aliquam sem.
+                        I👀Watch merupakan sebuah aplikasi layanan hiburan yang memberikan pelayanan pembelian tiket nonton film secara online sehingga sangat memudahkan untuk memesan tiket bioskop tanpa harus khawatir adanya antrian yang panjang.
                     </p>
                 </div>
 

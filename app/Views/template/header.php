@@ -34,10 +34,10 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerStatic">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Tentang Kami</a>
+                            <a class="nav-link active" href="#footer">Tentang Kami</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#footer">Perlu Bantuan</a>
+                            <a class="nav-link active" href="#footer">Perlu Bantuan?</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -64,10 +64,10 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerSticky">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item sticky-item" style="transform:translateY(-77px);">
-                            <a class="nav-link active" href="#">Tentang Kami</a>
+                            <a class="nav-link active" href="#footer">Tentang Kami</a>
                         </li>
                         <li class="nav-item sticky-item" style="transform:translateY(-77px);">
-                            <a class="nav-link active" href="#footer">Perlu Bantuan</a>
+                            <a class="nav-link active" href="#footer">Perlu Bantuan?</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 ">

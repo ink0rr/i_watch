@@ -15,7 +15,7 @@
                         <div class="col-md-9">
                             <div class="d-flex justify-content-between">
                                 <h1 class="fw-bold" style="color: #4C3575;"><?= $movie['title'] ?></h1>
-                                <p class="text-muted float-end p-2"><i class="fa-solid fa-clock fa-sm"></i> 87 Minutes</p>
+                                <p class="text-muted float-end p-2"><i class="fa-solid fa-clock fa-sm"></i> <?= $movie['duration'] ?> Minutes</p>
                             </div>
                             <div class="d-flex">
                                 <table class="table table-borderless table-responsive movie-description-table">

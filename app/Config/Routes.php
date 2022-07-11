@@ -38,11 +38,14 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/movies/(:num)', 'Movies::index/$1');
 
-//auth sementara
+//authentication
 $routes->get('/masuk', 'Auth::login');
 $routes->get('/daftar', 'Auth::register');
 $routes->get('/lupa-password', 'Auth::forgetPassword');
 
+
+//reservation
+$routes->get('/booking', 'Movies::reservations');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

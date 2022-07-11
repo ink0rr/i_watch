@@ -277,3 +277,52 @@ a.copyright-text:hover {
     width: 600px;
     padding-left: 0px !important;
 }
+
+/* end for movie */
+
+/* for reservations */
+
+.seatCharts-header {
+    margin-top: 10px !important;
+}
+
+.seatCharts-cell {
+    color: #182C4E;
+    height: 40px !important;
+    width: 40px !important;
+    line-height: 40px !important;
+}
+
+.seatCharts-seat {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.seatCharts-container {
+    display: table-row;
+}
+
+.seatCharts-row {
+    display: flex;
+}
+
+.seatCharts-seat.available {
+    background-color: white !important;
+    border: 2px solid #4C3575 !important;
+    color: #371B58 !important;
+
+}
+
+.seatCharts-seat.focused {
+    background-color: #371B58 !important;
+    cursor: pointer !important;
+}
+
+.seatCharts-seat.selected {
+    cursor: pointer !important;
+    background-color: #4C3575 !important;
+}
+
+.seatCharts-seat.unavailable {
+    background-color: #aeaaaa !important;
+}

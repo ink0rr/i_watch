@@ -2,15 +2,14 @@
     <div class="container">
         <div class="align-items-center py-4">
             <div class="col">
-                <div class="shadow-sm bg-light p-3">
+                <div class="shadow-sm bg-light py-3 px-4">
                     <div class="d-flex">
-                        <h4 class="fw-bold pt-3">NOW PLAYING</h4>
+                        <h4 class="fw-bold">NOW PLAYING</h4>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="d-grid">
                                 <img class="movie-cover" src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="<?= $movie['title'] ?>">
-                                <button class="btn bg-warning bg-opacity-75 rounded-0 text-black fw-bold shadow-none" style="font-size:15px;">Beli tiket</button>
                             </div>
                         </div>
                         <div class="col-md-9">
@@ -60,6 +59,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="<?= base_url('booking/' . $movie['id']) ?>" class="btn btn-lg bg-warning bg-opacity-75 rounded-0 text-black fw-bold shadow-none float-end w-25" style="font-size:15px;">Beli tiket</a>
                         </div>
                     </div>
                 </div>

@@ -331,3 +331,20 @@ ul.selected-seats-display li {
     border: 2px solid #4C3575 !important;
     color: #371B58 !important;
 }
+
+.seatCharts-legendList {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.seatCharts-legendItem {
+    padding: 0px !important;
+    width: 100% !important;
+    height: 40px !important;
+}
+
+.seatCharts-legendDescription {
+    line-height: 45px !important;
+    padding-left: 5px !important;
+    font-weight: bold !important;
+}

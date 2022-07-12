@@ -11,23 +11,29 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="shadow-sm bg-light p-4 rounded">
+                        <div class="shadow-sm bg-light p-3 rounded">
+                            <h5 class="fw-bold text-muted">Keterangan</h5>
+                            <div id="legend"></div>
+                        </div>
+                        <div class="shadow-sm bg-light p-4 rounded mt-4">
                             <form action="#" method="post">
                                 <input type="hidden" class="counter">
                                 <select hidden name="seat[]" class="selected-seats"></select>
                                 <div class="booking-details">
-                                    <h5 class="fw-bold"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
-                                    <ul class="selected-seats-display list-group p-0 my-3"></ul>
-                                    <p>Total: <b>Rp.<span id="total">0</span></b></p>
+                                    <h5 class="fw-bold text-muted"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
+                                    <ul class="selected-seats-display list-group p-0 mb-3"></ul>
+                                    <p>Total: Rp<b><span id="total">0</span></b>,-</p>
                                     <button class="btn btn-primary fw-bold" style="background-color:#4C3575; margin: 0 auto;">Checkout</button>
-                                    <div id="legend"></div>
+                                </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 <script>
     jQuery(function() {
@@ -54,6 +60,13 @@
                     price: 50000,
                     category: '',
                 },
+            },
+            legend: {
+                node: $('#legend'),
+                items: [
+                    ['e', 'available', 'Tersedia'],
+                    ['e', 'unavailable', 'Sudah terisi']
+                ]
             },
             naming: {
                 rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],

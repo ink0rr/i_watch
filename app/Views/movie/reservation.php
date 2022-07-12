@@ -63,7 +63,7 @@
                 },
                 naming: {
                     rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
-                    columns: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                    columns: ['1', '2', '3', '4', '', '5', '6', '7', '8', '', '9', '10', '11', '12'],
                     getLabel: function(character, row, column) {
                         return row + column;
                     },

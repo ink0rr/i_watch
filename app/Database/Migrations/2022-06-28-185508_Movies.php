@@ -21,6 +21,26 @@ class Movies extends Migration
             'duration' => [
                 'type' => 'INT',
             ],
+            'genre' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
+            'age_rating' => [
+                'type' => 'VARCHAR',
+                'constraint' => '10'
+            ],
+            'director' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
+            'writer' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
+            'stars' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
         ]);
 
         $this->forge->createTable('movies', TRUE);

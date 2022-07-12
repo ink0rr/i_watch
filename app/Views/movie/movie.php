@@ -20,42 +20,42 @@
                             <div class="d-flex">
                                 <table class="table table-borderless table-responsive movie-description-table">
                                     <tbody>
-                                        <tr>
-                                            <td class="attribute">Jenis Film</td>
-                                            <td class="colon">:</td>
-                                            <td class="value">lorem, ipsum, dolor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Produser</td>
-                                            <td class="colon">:</td>
-                                            <td class="value">consectetur adipiscing elit. Quisque ac urna mattis lacus maximus suscipit et quis elit.</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Sutradara</td>
-                                            <td class="colon">:</td>
-                                            <td class="value">consectetur adipiscing elit. Quisque ac urna mattis lacus maximus suscipit et quis elit.</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Penulis</td>
-                                            <td class="colon">:</td>
-                                            <td class="value">Maecenas a volutpat risus, eu tristique sapien</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Casts</td>
-                                            <td class="colon">:</td>
-                                            <td class="value">Praesent quis lectus suscipit, vulputate tortor vitae, commodo turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Aliquam vel ornare nisi, eu rhoncus mi. Ut leo erat, dignissim vitae ante a, dignissim pretium magna. Morbi id egestas dolor, vitae vestibulum magna. Vestibulum ac scelerisque mi. Duis ac faucibus ante, vitae eleifend nibh. Mauris sagittis vehicula ante vel lobortis.</td>
-                                        </tr>
-                                        <tr>
-                                            <td><br></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute" colspan="3">
-                                                <h5 style="color:#4C3575;">SINOPSIS</h5>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
-                                        </tr>
+                                    <tr>
+                                        <td class="attribute">Genre</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['genre'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Age Rating</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['age_rating'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Director</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['director'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Writer</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['writer'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Stars</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['stars'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><br></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute" colspan="3">
+                                            <h5 style="color:#4C3575;">SINOPSIS</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

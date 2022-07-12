@@ -19,8 +19,7 @@
                                 <select hidden name="seat[]" class="selected-seats"></select>
                                 <div class="booking-details">
                                     <h5 class="fw-bold"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
-                                    <ul class="selected-seats-display list-group p-0 my-3">
-                                    </ul>
+                                    <ul class="selected-seats-display list-group p-0 my-3"></ul>
                                     <p>Total: <b>Rp.<span id="total">0</span></b></p>
                                     <button class="btn btn-primary fw-bold" style="background-color:#4C3575; margin: 0 auto;">Checkout</button>
                                     <div id="legend"></div>
@@ -33,79 +32,74 @@
     </div>
 </section>
 <script>
-    $(document).ready(function() {
-        var $cart_display = $('.selected-seats-display'),
-            $cart = $('.selected-seats'),
-            $counter = $('.counter'),
-            $total = $('#total'),
-            $price = 0,
-            sc = $('#seat-map').seatCharts({
-                map: [
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                    'eeee_eeee_eeee',
-                ],
-                seats: {
-                    e: {
-                        price: 50000,
-                        category: '',
-                    }
-
+    jQuery(function() {
+        const $cart_display = $('.selected-seats-display');
+        const $cart = $('.selected-seats');
+        const $counter = $('.counter');
+        const $total = $('#total');
+        const sc = $('#seat-map').seatCharts({
+            map: [
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+                'eeee_eeee_eeee',
+            ],
+            seats: {
+                e: {
+                    price: 50000,
+                    category: '',
                 },
-                naming: {
-                    rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
-                    columns: ['1', '2', '3', '4', '', '5', '6', '7', '8', '', '9', '10', '11', '12'],
-                    getId: function(character, row, column) {
-                        return row + column;
-                    },
-                    getLabel: function(character, row, column) {
-                        return row + column;
-                    },
+            },
+            naming: {
+                rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
+                columns: ['1', '2', '3', '4', '', '5', '6', '7', '8', '', '9', '10', '11', '12'],
+                getLabel: function(character, row, column) {
+                    return row + column;
                 },
-                click: function() {
-                    if (this.status() == 'available') {
-                        $('<li class="btn fw-bold text-white mt-2 p-2 " style="background-color:#4C3575"> Seat ' + this.settings.label + '<a href="#" class="cancel-cart-item text-danger px-3"><i class="fa-solid fa-trash text-danger"></i></a></li>')
-                            .attr('data-group', 'cart-item-' + this.settings.id)
-                            .data('seatId', this.settings.id)
-                            .appendTo($cart_display);
+            },
+            click: function() {
+                if (this.status() === 'available') {
+                    $('<li class="badge badge-primary mt-2 p-2"> Seat ' + this.settings.label + '</b> | <a href="#" class="cancel-cart-item text-danger "><i class="fa-solid fa-trash text-danger"></i> Batal</a></li>')
+                        .attr('data-group', 'cart-item-' + this.settings.id)
+                        .data('seatId', this.settings.id)
+                        .appendTo($cart_display);
 
-                        $('<option selected>R' + (this.settings.row + 1) + ' L' + this.settings.label + ' P' + this.settings.data.price + '</option>')
-                            .attr('data-group', 'cart-item-' + this.settings.id)
-                            .attr('value', this.settings.id + "|" + this.settings.data.price)
-                            .attr('alt', this.settings.data.price)
-                            .data('seatId', this.settings.id)
-                            .appendTo($cart);
+                    $('<option selected>R' + (this.settings.row + 1) + ' L' + this.settings.label + ' P' + this.settings.data.price + '</option>')
+                        .attr('data-group', 'cart-item-' + this.settings.id)
+                        .attr('value', this.settings.id + '|' + this.settings.data.price)
+                        .attr('alt', this.settings.data.price)
+                        .data('seatId', this.settings.id)
+                        .appendTo($cart);
 
+                    $counter.text(sc.find('selected').length + 1);
+                    $total.text(recalculateTotal(sc) + this.data().price);
 
-                        $counter.text(sc.find('selected').length + 1);
-                        $total.text(recalculateTotal(sc) + this.data().price);
+                    return 'selected';
+                } else if (this.status() === 'selected') {
+                    $counter.text(sc.find('selected').length - 1);
+                    $total.text(recalculateTotal(sc) - this.data().price);
 
-                        return 'selected';
-                    } else if (this.status() == 'selected') {
-                        $counter.text(sc.find('selected').length - 1);
-                        $total.text(recalculateTotal(sc) - this.data().price);
+                    $('li[data-group="cart-item-' + this.settings.id).remove();
+                    $('option[data-group="cart-item-' + this.settings.id).remove();
 
-                        $('li[data-group="cart-item-' + this.settings.id).remove();
-
-                        return 'available';
-                    } else if (this.status() == 'unavailable') {
-                        return 'unavailable';
-                    } else {
-                        return this.style();
-                    }
-
+                    return 'available';
+                } else if (this.status() === 'unavailable') {
+                    return 'unavailable';
+                } else {
+                    return this.style();
                 }
-            });
 
-        $('.selected-seats-display').on('click', '.cancel-cart-item', function() {
+            },
+        });
+
+        $cart_display.on('click', '.cancel-cart-item', function() {
             sc.get($(this).parents('li:first').data('seatId')).click();
         });
 
@@ -122,7 +116,7 @@
     });
 
     function recalculateTotal(sc) {
-        var total = 0;
+        let total = 0;
 
         sc.find('selected').each(function() {
             total += this.data().price;

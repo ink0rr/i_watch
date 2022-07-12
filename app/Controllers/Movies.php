@@ -10,6 +10,7 @@ class Movies extends BaseController
     public function __construct()
     {
         $this->movies = new Models\Movies();
+        $this->seats = new Models\Seats();
     }
     public function index(int $id): string
     {
@@ -24,9 +25,21 @@ class Movies extends BaseController
             . view('template/footer');
     }
 
-    public function reservations()
+    public function get_reservations_map($id)
     {
+    }
+
+
+    public function reservations($id)
+    {
+        $db = \Config\Database::connect();
+        $data['seats'] = $db->query("select seats.*, reservations.*
+        from `seats`
+        left join `reservations`
+        on seats.id = reservations.seat_id
+        where screening_id =$id")->getResultArray();
         $data['title'] = "Reservations";
+
         return view('template/header', $data)
             . view('movie/reservation')
             . view('template/footer');

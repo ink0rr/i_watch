@@ -4,8 +4,7 @@
             <div class="p-3">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="d-flex shadow">
-
+                        <div class="d-flex shadow bg-light p-4 rounded">
                         </div>
                         <div class="d-flex justify-content-center shadow-sm bg-light p-4 rounded">
                             <div id="seat-map">
@@ -63,14 +62,17 @@
                 },
                 naming: {
                     rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
-                    columns: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                    columns: ['1', '2', '3', '4', '', '5', '6', '7', '8', '', '9', '10', '11', '12'],
+                    getId: function(character, row, column) {
+                        return row + column;
+                    },
                     getLabel: function(character, row, column) {
                         return row + column;
                     },
                 },
                 click: function() {
                     if (this.status() == 'available') {
-                        $('<li class="badge badge-primary mt-2 p-2"> Seat ' + this.settings.label + '</b> | <a href="#" class="cancel-cart-item text-danger "><i class="fa-solid fa-trash text-danger"></i> Batal</a></li>')
+                        $('<li class="btn fw-bold text-white mt-2 p-2 " style="background-color:#4C3575"> Seat ' + this.settings.label + '<a href="#" class="cancel-cart-item text-danger px-3"><i class="fa-solid fa-trash text-danger"></i></a></li>')
                             .attr('data-group', 'cart-item-' + this.settings.id)
                             .data('seatId', this.settings.id)
                             .appendTo($cart_display);
@@ -107,9 +109,15 @@
             sc.get($(this).parents('li:first').data('seatId')).click();
         });
 
-        sc.find('a.unavailable').each(function(seatId) {
-            console.log(this.data());
-        });
+        // sc.get(['A2', 'B1', 'C1', 'D2']).status('unavailable');
+        <?php
+
+        foreach ($seats as $row) {
+        ?>
+            sc.get(['<?= $row['name'] ?>']).status('unavailable');
+        <?php
+        }
+        ?>
 
     });
 

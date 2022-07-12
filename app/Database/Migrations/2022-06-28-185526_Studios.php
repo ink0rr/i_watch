@@ -15,7 +15,7 @@ class Studios extends Migration
                 'constraint' => '255'
             ]
         ]);
-        
+
         $this->forge->createTable('studios', TRUE);
     }
 

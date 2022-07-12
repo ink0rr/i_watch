@@ -287,7 +287,6 @@ a.copyright-text:hover {
 }
 
 .seatCharts-cell {
-    color: #182C4E;
     height: 40px !important;
     width: 40px !important;
     line-height: 40px !important;
@@ -325,4 +324,10 @@ a.copyright-text:hover {
 
 .seatCharts-seat.unavailable {
     background-color: #aeaaaa !important;
+}
+
+ul.selected-seats-display li {
+    background-color: white !important;
+    border: 2px solid #4C3575 !important;
+    color: #371B58 !important;
 }

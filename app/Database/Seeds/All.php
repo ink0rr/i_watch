@@ -9,8 +9,8 @@ class All extends Seeder
     public function run()
     {
         $this->call('Movies');
-        $this->call('Seats');
         $this->call('Studios');
+        $this->call('Seats');
         $this->call('Screenings');
         $this->call('Reservations');
     }

@@ -25,15 +25,10 @@ class Movies extends BaseController
             . view('template/footer');
     }
 
-    public function get_reservations_map($id)
-    {
-    }
-
-
     public function reservations($id)
     {
         $db = \Config\Database::connect();
-        $data['seats'] = $db->query("select seats.*, reservations.*
+        $data['seats'] = $db->query("select seats.name
         from `seats`
         left join `reservations`
         on seats.id = reservations.seat_id

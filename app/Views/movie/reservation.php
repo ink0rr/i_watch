@@ -4,8 +4,6 @@
             <div class="p-3">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="d-flex shadow bg-light p-4 rounded">
-                        </div>
                         <div class="d-flex justify-content-center shadow-sm bg-light p-4 rounded">
                             <div id="seat-map">
                                 <div class="text-white bg-dark bg-opacity-50 rounded w-100 py-2 text-center fw-bold">Layar</div>
@@ -105,8 +103,6 @@
         $cart_display.on('click', '.cancel-cart-item', function() {
             sc.get($(this).parents('li:first').data('seatId')).click();
         });
-
-        // sc.get(['A2', 'B1', 'C1', 'D2']).status('unavailable');
         <?php
 
         foreach ($seats as $row) {

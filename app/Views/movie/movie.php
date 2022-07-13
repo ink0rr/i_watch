@@ -2,6 +2,7 @@
     <div class="container">
         <div class="align-items-center py-4">
             <div class="col">
+                <a href="<?= base_url() ?>" class="fw-bold" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> KEMBALI KE HALAMAN SEBELUMNYA</span></a>
                 <div class="shadow-sm bg-light py-3 px-4">
                     <div class="d-flex">
                         <h4 class="fw-bold">NOW PLAYING</h4>
@@ -20,42 +21,42 @@
                             <div class="d-flex">
                                 <table class="table table-borderless table-responsive movie-description-table">
                                     <tbody>
-                                    <tr>
-                                        <td class="attribute">Genre</td>
-                                        <td class="colon">:</td>
-                                        <td class="value"><?= $movie['genre'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute">Age Rating</td>
-                                        <td class="colon">:</td>
-                                        <td class="value"><?= $movie['age_rating'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute">Director</td>
-                                        <td class="colon">:</td>
-                                        <td class="value"><?= $movie['director'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute">Writer</td>
-                                        <td class="colon">:</td>
-                                        <td class="value"><?= $movie['writer'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute">Stars</td>
-                                        <td class="colon">:</td>
-                                        <td class="value"><?= $movie['stars'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><br></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute" colspan="3">
-                                            <h5 style="color:#4C3575;">SINOPSIS</h5>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
-                                    </tr>
+                                        <tr>
+                                            <td class="attribute">Genre</td>
+                                            <td class="colon">:</td>
+                                            <td class="value"><?= $movie['genre'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute">Age Rating</td>
+                                            <td class="colon">:</td>
+                                            <td class="value"><?= $movie['age_rating'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute">Director</td>
+                                            <td class="colon">:</td>
+                                            <td class="value"><?= $movie['director'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute">Writer</td>
+                                            <td class="colon">:</td>
+                                            <td class="value"><?= $movie['writer'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute">Stars</td>
+                                            <td class="colon">:</td>
+                                            <td class="value"><?= $movie['stars'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute" colspan="3">
+                                                <h5 style="color:#4C3575;">SINOPSIS</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

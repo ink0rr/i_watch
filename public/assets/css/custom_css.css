@@ -278,6 +278,22 @@ a.copyright-text:hover {
     padding-left: 0px !important;
 }
 
+a.selected {
+    color: white !important;
+    background-color: #371B58;
+}
+
+.overflow {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.overflow::-webkit-scrollbar {
+    display: none;
+}
+
+
 /* end for movie */
 
 /* for reservations */
@@ -287,6 +303,7 @@ a.copyright-text:hover {
 }
 
 .seatCharts-cell {
+    background-color: transparent !important;
     height: 40px !important;
     width: 40px !important;
     line-height: 40px !important;

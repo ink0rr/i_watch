@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models;
 use CodeIgniter\Exceptions\PageNotFoundException;
+use App\Libraries\Breadcrumb;
 
 class Movies extends BaseController
 {
@@ -13,6 +14,10 @@ class Movies extends BaseController
 
     public function __construct()
     {
+        $this->db = \Config\Database::connect();
+        $this->movies = new Models\Movies();
+        $this->seats = new Models\Seats();
+        $this->breadcrumb = new Breadcrumb();
         $this->movies = model(Models\Movies::class);
         $this->seats = model(Models\Seats::class);
         $this->screenings = model(Models\Screenings::class);
@@ -21,14 +26,33 @@ class Movies extends BaseController
     public function index(int $id): string
     {
         $data['movie'] = $this->movies->find($id);
+
+        $this->db = \Config\Database::connect();
+        $data['screenings'] = $this->db->query("SELECT * 
+        FROM screenings 
+        WHERE movie_id = $id 
+        GROUP BY DAY(start_time)")->getResultArray();
+
         if ($data['movie'] === null) {
             throw PageNotFoundException::forPageNotFound();
         }
+        $this->breadcrumb->add('Beranda', '/');
+        $this->breadcrumb->add($data['movie']['title'], '/movies/' . $id);
+        $data['breadcrumbs'] = $this->breadcrumb->render();
 
         $data['title'] = $data['movie']['title'];
         return view('template/header', $data)
             . view('movie/movie')
             . view('template/footer');
+    }
+
+    public function get_start_time()
+    {
+        $id = $_POST['id'];
+        $day = $_POST['hari'];
+        $month = $_POST['bulan'];
+        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month")->getResultArray();
+        var_dump($data);
     }
 
     public function reservations($id)
@@ -44,6 +68,11 @@ class Movies extends BaseController
             ->join('reservations', 'seats.id = reservations.seat_id', 'left')
             ->where("screening_id = $id")
             ->select('seats.name')->findAll();
+
+        $this->breadcrumb->add('Beranda', '/');
+        $this->breadcrumb->add($data['movie']['title'], '/movies/' . $id);
+        $this->breadcrumb->add('Reservasi', '/reservasi/' . $id);
+        $data['breadcrumbs'] = $this->breadcrumb->render();
 
         $data['title'] = $data['movie']['title'];
 

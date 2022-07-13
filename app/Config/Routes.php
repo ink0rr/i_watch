@@ -36,7 +36,10 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+//movie
 $routes->get('/movies/(:num)', 'Movies::index/$1');
+$routes->post('/movies/get_start_time/', 'Movies::get_start_time');
 
 //authentication
 $routes->get('/masuk', 'Auth::login');
@@ -45,7 +48,7 @@ $routes->get('/lupa-password', 'Auth::forgetPassword');
 
 
 //reservation
-$routes->get('/booking/(:num)', 'Movies::reservations/$1');
+$routes->get('/reservasi/(:num)', 'Movies::reservations/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

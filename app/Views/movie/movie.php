@@ -2,7 +2,6 @@
     <div class="container">
         <div class="align-items-center py-4">
             <div class="col">
-                <a href="<?= base_url() ?>" class="fw-bold" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> KEMBALI KE HALAMAN SEBELUMNYA</span></a>
                 <div class="shadow-sm bg-light py-3 px-4">
                     <div class="d-flex">
                         <h4 class="fw-bold">NOW PLAYING</h4>

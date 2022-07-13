@@ -2,7 +2,6 @@
     <div class="container">
         <div class="align-items-center">
             <div class="p-3">
-            <a href="<?= base_url("/movies/" . $movie['id']) ?>" class="fw-bold" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> KEMBALI KE HALAMAN SEBELUMNYA</span></a>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="d-flex justify-content-center shadow-sm bg-light p-4 rounded">

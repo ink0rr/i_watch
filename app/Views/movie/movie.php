@@ -66,7 +66,7 @@
                         <?php
                         setlocale(LC_ALL, 'id-ID', 'id_ID');
                         $hari = array(
-                            1 =>    'Senin',
+                            1 => 'Senin',
                             'Selasa',
                             'Rabu',
                             'Kamis',
@@ -75,7 +75,7 @@
                             'Minggu'
                         );
                         $bulan = array(
-                            1 =>   'Januari',
+                            1 => 'Januari',
                             'Februari',
                             'Maret',
                             'April',
@@ -111,8 +111,8 @@
 <script>
     $(document).ready(function() {
         $(".hari").click(function() {
-            var hari = $(this).data("hari"),
-                bulan = $(this).data("bulan");
+            const hari = $(this).data("hari");
+            const bulan = $(this).data("bulan");
 
             $.ajax({
                 url: "<?= site_url('movies/get_start_time/') ?>",
@@ -120,17 +120,16 @@
                 data: {
                     id: <?= $movie['id'] ?>,
                     hari: hari,
-                    bulan: bulan
+                    bulan: bulan,
                 },
                 success: function($data) {
-                    var parse = JSON.parse($data, null, 2);
-
-                    console.log(JSON.stringify($parse));
-                    $.each($data, function() {
-
-                    })
-                }
-            })
-        })
+                    const data = JSON.parse($data);
+                    $.each(data, function(index, value) {
+                        console.log(index, value);
+                        console.log(value['start_time']) // buat access props ny
+                    });
+                },
+            });
+        });
     });
 </script>

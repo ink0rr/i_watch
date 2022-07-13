@@ -12,8 +12,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="shadow-sm bg-light p-3 rounded">
-                        <?php foreach ($screening as $row) {
-                        ?>
+                        <?php foreach ($screening as $row) : ?>
                             <div class="row border-bottom border-muted">
                                 <div class="col-2">
                                     <img src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
@@ -44,7 +43,7 @@
                                 </div>
                             </div>
 
-                        <?php } ?>
+                        <?php endforeach; ?>
                         <div id="legend"></div>
                     </div>
                     <div class="shadow-sm bg-light rounded mt-4">
@@ -101,8 +100,8 @@
                 node: $('#legend'),
                 items: [
                     ['e', 'available', 'Tersedia'],
-                    ['e', 'unavailable', 'Sudah terisi']
-                ]
+                    ['e', 'unavailable', 'Sudah terisi'],
+                ],
             },
             naming: {
                 rows: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
@@ -145,22 +144,15 @@
                 } else {
                     return this.style();
                 }
-
             },
         });
 
         $cart_display.on('click', '.cancel-cart-item', function() {
             sc.get($(this).parents('li:first').data('seatId')).click();
         });
-        <?php
-
-        foreach ($seats as $row) {
-        ?>
+        <?php foreach ($seats as $row) : ?>
             sc.get(['<?= $row['name'] ?>']).status('unavailable');
-        <?php
-        }
-        ?>
-
+        <?php endforeach; ?>
     });
 
     function recalculateTotal(sc) {

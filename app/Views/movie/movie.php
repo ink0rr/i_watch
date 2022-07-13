@@ -123,8 +123,9 @@
                     bulan: bulan
                 },
                 success: function($data) {
-                    console.log(JSON.stringify($data, null, 2));
-                    alert(JSON.stringify($data, null, 2));
+                    var parse = JSON.parse($data, null, 2);
+
+                    console.log(JSON.stringify($parse));
                     $.each($data, function() {
 
                     })

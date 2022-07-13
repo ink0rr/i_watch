@@ -117,14 +117,14 @@
             $.ajax({
                 url: "<?= site_url('movies/get_start_time/') ?>",
                 type: "post",
-                dataType: "json",
                 data: {
                     id: <?= $movie['id'] ?>,
                     hari: hari,
                     bulan: bulan
                 },
                 success: function($data) {
-                    console.log(JSON.parse($data))
+                    console.log(JSON.stringify($data, null, 2));
+                    alert(JSON.stringify($data, null, 2));
                     $.each($data, function() {
 
                     })

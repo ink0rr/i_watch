@@ -1,6 +1,6 @@
 <section class="movie-bg">
     <div class="container">
-        <div class="align-items-center py-4">
+        <div class="align-items-center">
             <div class="p-3">
                 <div class="row">
                     <div class="col-md-8">
@@ -12,18 +12,54 @@
                     </div>
                     <div class="col-md-4">
                         <div class="shadow-sm bg-light p-3 rounded">
-                            <h5 class="fw-bold text-muted">Keterangan</h5>
+                            <?php foreach ($screening as $row) {
+                            ?>
+                                <div class="row border-bottom border-muted">
+                                    <div class="col-2">
+                                        <img src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
+                                    </div>
+                                    <div class="col-10 ">
+                                        <h5 class="mb-0 fw-bold" style="color:#4C3575">
+                                            <?php if (strlen($row['title']) > 24) {
+                                                $fixed = substr($row['title'], 0, 24) . '...';
+                                                echo $fixed;
+                                            } else {
+                                                echo $row['title'];
+                                            } ?>
+                                        </h5>
+                                        <h5 class="fw-bold mb-0">
+                                            <?= $row['name'] ?>
+                                        </h5>
+                                        <small class="mb-0 fw-bold text-muted">
+                                            <?php
+                                            $date = date_create($row['start_time']);
+                                            echo date_format($date, 'd M');
+                                            ?> |
+                                            <?php
+                                            $date = date_create($row['start_time']);
+                                            echo date_format($date, 'h:m');
+                                            ?>
+
+                                        </small>
+                                    </div>
+                                </div>
+
+                            <?php } ?>
                             <div id="legend"></div>
                         </div>
-                        <div class="shadow-sm bg-light p-4 rounded mt-4">
+                        <div class="shadow-sm bg-light rounded mt-4">
                             <form action="#" method="post">
                                 <input type="hidden" class="counter">
                                 <select hidden name="seat[]" class="selected-seats"></select>
-                                <div class="booking-details">
-                                    <h5 class="fw-bold text-muted"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
-                                    <ul class="selected-seats-display list-group p-0 mb-3"></ul>
-                                    <p>Total: Rp<b><span id="total">0</span></b>,-</p>
-                                    <button class="btn btn-primary fw-bold" style="background-color:#4C3575; margin: 0 auto;">Checkout</button>
+                                <div class="booking-details p-1">
+                                    <div class="border-bottom border-muted">
+                                        <h5 class="fw-bold text-muted px-3 pt-2 pb-1"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
+                                    </div>
+                                    <div class="px-3 pt-1 pb-3 mb-0">
+                                        <ul class="selected-seats-display list-group p-0"></ul>
+                                        <p>Total: Rp<b><span id="total">0</span></b>,-</p>
+                                        <button class="btn btn-primary fw-bold" style="background-color:#4C3575; margin: 0 auto;">Checkout</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>

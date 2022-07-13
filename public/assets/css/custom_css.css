@@ -333,6 +333,7 @@ ul.selected-seats-display li {
 }
 
 .seatCharts-legendList {
+    display: flex;
     margin-top: 10px;
     padding: 0px;
 }

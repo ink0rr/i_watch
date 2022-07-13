@@ -29,18 +29,27 @@ class Movies extends BaseController
     {
         $data['movie'] = $this->movies->find($id);
 
+        //gw make ini karena query builder ci4 ribet :( kalo tau bentuknya, konversi aja
         $db = \Config\Database::connect();
+        $data['screening'] = $db->query("select * 
+        from screenings 
+        join movies
+        on screenings.movie_id = movies.id 
+        join studios
+        on screenings.studio_id = studios.id
+        where screenings.id =$id")->getResultArray();
         $data['seats'] = $db->query("select seats.name
-        from `seats`
-        left join `reservations`
+        from seats
+        left join reservations
         on seats.id = reservations.seat_id
         where screening_id =$id")->getResultArray();
 
         $data['title'] = $data['movie']['title'];
 
-        if ($data['movie'] === null || $data['seats'] === null) {
+        if ($data['movie'] === null || $data['seats'] === null || $data['screening'] === null) {
             throw PageNotFoundException::forPageNotFound();
         }
+
         return view('template/header', $data)
             . view('movie/reservation')
             . view('template/footer');

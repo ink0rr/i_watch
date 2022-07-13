@@ -21,42 +21,42 @@
                             <div class="d-flex">
                                 <table class="table table-borderless table-responsive movie-description-table">
                                     <tbody>
-                                        <tr>
-                                            <td class="attribute">Genre</td>
-                                            <td class="colon">:</td>
-                                            <td class="value"><?= $movie['genre'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Age Rating</td>
-                                            <td class="colon">:</td>
-                                            <td class="value"><?= $movie['age_rating'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Director</td>
-                                            <td class="colon">:</td>
-                                            <td class="value"><?= $movie['director'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Writer</td>
-                                            <td class="colon">:</td>
-                                            <td class="value"><?= $movie['writer'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute">Stars</td>
-                                            <td class="colon">:</td>
-                                            <td class="value"><?= $movie['stars'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><br></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute" colspan="3">
-                                                <h5 style="color:#4C3575;">SINOPSIS</h5>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
-                                        </tr>
+                                    <tr>
+                                        <td class="attribute">Genre</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['genre'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Age Rating</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['age_rating'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Director</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['director'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Writer</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['writer'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Stars</td>
+                                        <td class="colon">:</td>
+                                        <td class="value"><?= $movie['stars'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><br></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute" colspan="3">
+                                            <h5 style="color:#4C3575;">SINOPSIS</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute" colspan="3"><?= $movie['description'] ?></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -66,7 +66,7 @@
                         <?php
                         setlocale(LC_ALL, 'id-ID', 'id_ID');
                         $hari = array(
-                            1 =>    'Senin',
+                            1 => 'Senin',
                             'Selasa',
                             'Rabu',
                             'Kamis',
@@ -75,7 +75,7 @@
                             'Minggu'
                         );
                         $bulan = array(
-                            1 =>   'Januari',
+                            1 => 'Januari',
                             'Februari',
                             'Maret',
                             'April',
@@ -90,12 +90,12 @@
                         );
                         foreach ($screenings as $row) {
                             $date = date_create($row['start_time']);
-                        ?>
+                            ?>
                             <a href="#" class="hari border border-dark rounded px-4 text-center text-black" data-hari="<?= date_format($date, 'd') ?>" data-bulan="<?= date_format($date, 'm') ?>">
                                 <p class="p-0 m-0 fw-bold"><?= $hari[date_format($date, 'N')] ?></p>
                                 <small><?= date_format($date, 'd') . " " . $bulan[date_format($date, 'n')] ?></small>
                             </a>&nbsp;
-                        <?php
+                            <?php
                         }
                         ?>
                     </div>
@@ -111,8 +111,8 @@
 <script>
     $(document).ready(function() {
         $(".hari").click(function() {
-            var hari = $(this).data("hari"),
-                bulan = $(this).data("bulan");
+            const hari = $(this).data("hari");
+            const bulan = $(this).data("bulan");
 
             $.ajax({
                 url: "<?= site_url('movies/get_start_time/') ?>",
@@ -120,16 +120,16 @@
                 data: {
                     id: <?= $movie['id'] ?>,
                     hari: hari,
-                    bulan: bulan
+                    bulan: bulan,
                 },
                 success: function($data) {
-                    console.log(JSON.stringify($data, null, 2));
-                    alert(JSON.stringify($data, null, 2));
-                    $.each($data, function() {
-
-                    })
-                }
-            })
-        })
+                    const data = JSON.parse($data);
+                    $.each(data, function(index, value) {
+                        console.log(index, value);
+                        console.log(value['start_time']) // buat access props ny
+                    });
+                },
+            });
+        });
     });
 </script>

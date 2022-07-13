@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Breadcrumb;
 use App\Models;
 use CodeIgniter\Exceptions\PageNotFoundException;
-use App\Libraries\Breadcrumb;
 
 class Movies extends BaseController
 {
@@ -51,8 +51,8 @@ class Movies extends BaseController
         $id = $_POST['id'];
         $day = $_POST['hari'];
         $month = $_POST['bulan'];
-        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month")->getResultArray();
-        var_dump($data);
+        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month")->getResult();
+        return json_encode($data['start_time']);
     }
 
     public function reservations($id)

@@ -7,11 +7,17 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Movies extends BaseController
 {
+    private Models\Movies $movies;
+    private Models\Seats $seats;
+    private Models\Screenings $screenings;
+
     public function __construct()
     {
-        $this->movies = new Models\Movies();
-        $this->seats = new Models\Seats();
+        $this->movies = model(Models\Movies::class);
+        $this->seats = model(Models\Seats::class);
+        $this->screenings = model(Models\Screenings::class);
     }
+
     public function index(int $id): string
     {
         $data['movie'] = $this->movies->find($id);
@@ -29,20 +35,15 @@ class Movies extends BaseController
     {
         $data['movie'] = $this->movies->find($id);
 
-        //gw make ini karena query builder ci4 ribet :( kalo tau bentuknya, konversi aja
-        $db = \Config\Database::connect();
-        $data['screening'] = $db->query("select * 
-        from screenings 
-        join movies
-        on screenings.movie_id = movies.id 
-        join studios
-        on screenings.studio_id = studios.id
-        where screenings.id =$id")->getResultArray();
-        $data['seats'] = $db->query("select seats.name
-        from seats
-        left join reservations
-        on seats.id = reservations.seat_id
-        where screening_id =$id")->getResultArray();
+        $data['screening'] = $this->screenings
+            ->join('movies', 'screenings.movie_id = movies.id')
+            ->join('studios', 'screenings.studio_id = studios.id')
+            ->where("screenings.id = $id")->findAll();
+
+        $data['seats'] = $this->seats
+            ->join('reservations', 'seats.id = reservations.seat_id', 'left')
+            ->where("screening_id = $id")
+            ->select('seats.name')->findAll();
 
         $data['title'] = $data['movie']['title'];
 

@@ -8,18 +8,26 @@ use App\Libraries\Breadcrumb;
 
 class Movies extends BaseController
 {
+    private Models\Movies $movies;
+    private Models\Seats $seats;
+    private Models\Screenings $screenings;
+
     public function __construct()
     {
         $this->db = \Config\Database::connect();
         $this->movies = new Models\Movies();
         $this->seats = new Models\Seats();
         $this->breadcrumb = new Breadcrumb();
+        $this->movies = model(Models\Movies::class);
+        $this->seats = model(Models\Seats::class);
+        $this->screenings = model(Models\Screenings::class);
     }
+
     public function index(int $id): string
     {
         $data['movie'] = $this->movies->find($id);
 
-        //gw make ini karena query builder ci4 ribet :( kalo tau bentuknya, konversi aja
+        $this->db = \Config\Database::connect();
         $data['screenings'] = $this->db->query("SELECT * 
         FROM screenings 
         WHERE movie_id = $id 
@@ -51,18 +59,15 @@ class Movies extends BaseController
     {
         $data['movie'] = $this->movies->find($id);
 
-        $data['screening'] = $this->db->query("select * 
-        from screenings 
-        join movies
-        on screenings.movie_id = movies.id 
-        join studios
-        on screenings.studio_id = studios.id
-        where screenings.id =$id")->getResultArray();
-        $data['seats'] = $this->db->query("select seats.name
-        from seats
-        left join reservations
-        on seats.id = reservations.seat_id
-        where screening_id =$id")->getResultArray();
+        $data['screening'] = $this->screenings
+            ->join('movies', 'screenings.movie_id = movies.id')
+            ->join('studios', 'screenings.studio_id = studios.id')
+            ->where("screenings.id = $id")->findAll();
+
+        $data['seats'] = $this->seats
+            ->join('reservations', 'seats.id = reservations.seat_id', 'left')
+            ->where("screening_id = $id")
+            ->select('seats.name')->findAll();
 
         $this->breadcrumb->add('Beranda', '/');
         $this->breadcrumb->add($data['movie']['title'], '/movies/' . $id);

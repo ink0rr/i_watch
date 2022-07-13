@@ -62,7 +62,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex mt-4 overflow">
+                    <h5 class="fw-bold text-muted mt-4 pb-1">Jadwal Tayang</h5>
+                    <div class="d-flex mt-1 overflow border-bottom border-muted py-2">
                         <?php
                         setlocale(LC_ALL, 'id-ID', 'id_ID');
                         $hari = array(
@@ -90,18 +91,25 @@
                         );
                         foreach ($screenings as $row) {
                             $date = date_create($row['start_time']);
-                        ?>
-                            <a href="#" class="hari border border-dark rounded px-4 text-center text-black" data-hari="<?= date_format($date, 'd') ?>" data-bulan="<?= date_format($date, 'm') ?>">
-                                <p class="p-0 m-0 fw-bold"><?= $hari[date_format($date, 'N')] ?></p>
-                                <small><?= date_format($date, 'd') . " " . $bulan[date_format($date, 'n')] ?></small>
-                            </a>&nbsp;
-                        <?php
-                        }
-                        ?>
+                            $now = new DateTime();
+                            if ($date < $now) {
+                        ?><a class="btn rounded px-4 text-center text-white" style="width:100px; background-color:gray;" data-hari="<?= date_format($date, 'd') ?>" data-bulan="<?= date_format($date, 'm') ?>">
+                                <?php
+                            } else {
+                                ?>
+                                    <a class="hari btn border border-dark rounded px-4 text-center text-black" style="width:100px;" data-hari="<?= date_format($date, 'd') ?>" data-bulan="<?= date_format($date, 'm') ?>">
+                                    <?php
+                                }
+                                    ?>
+
+                                    <p class="p-0 m-0 fw-bold"><?= $hari[date_format($date, 'N')] ?></p>
+                                    <small><?= date_format($date, 'd') . " " . $bulan[date_format($date, 'n')] ?></small>
+                                    </a>&nbsp;
+                                <?php
+                            }
+                                ?>
                     </div>
-                    <div class="d-flex mt-3 overflow">
-                        <h5 class="fw-bold text-muted">Jam Tayang</h5>
-                        <div id="#jadwal"></div>
+                    <div class="d-flex mt-3 overflow jadwal">
                     </div>
                 </div>
             </div>
@@ -111,8 +119,11 @@
 <script>
     $(document).ready(function() {
         $(".hari").click(function() {
+            const clickBtn = $(this);
             const hari = $(this).data("hari");
             const bulan = $(this).data("bulan");
+            const jadwal = $(".jadwal");
+            jadwal.html("");
 
             $.ajax({
                 url: "<?= site_url('movies/get_start_time/') ?>",
@@ -123,10 +134,27 @@
                     bulan: bulan,
                 },
                 success: function($data) {
+                    clickBtn.addClass('selected');
+                    $('.hari').not(clickBtn).each(function() {
+                        $(this).removeClass('selected');
+                    });
                     const data = JSON.parse($data);
                     $.each(data, function(index, value) {
                         console.log(index, value);
-                        console.log(value['start_time']) // buat access props ny
+                        console.log(value['start_time']);
+
+                        var date = new Date(),
+                            start_time = new Date(value['start_time']),
+                            temp_hours = start_time.getHours(),
+                            hours = ("0" + temp_hours).slice(-2),
+                            temp_minutes = start_time.getMinutes(),
+                            minutes = ("0" + temp_minutes).slice(-2);
+
+                        if (date > start_time) {
+                            jadwal.append("<a class='btn border border-dark rounded px-4 text-center text-white fw-bold m-1' style='width:100px; background-color:gray;'>" + hours + ":" + minutes + "</a>");
+                        } else {
+                            jadwal.append("<a class='btn border border-dark rounded px-4 text-center text-black fw-bold m-1' style='width:100px;'>" + hours + ":" + minutes + "</a>");
+                        }
                     });
                 },
             });

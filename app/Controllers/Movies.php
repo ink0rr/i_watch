@@ -31,7 +31,8 @@ class Movies extends BaseController
         $data['screenings'] = $this->db->query("SELECT * 
         FROM screenings 
         WHERE movie_id = $id 
-        GROUP BY DAY(start_time)")->getResultArray();
+        GROUP BY DAY(start_time)
+        ORDER BY start_time ASC")->getResultArray();
 
         if ($data['movie'] === null) {
             throw PageNotFoundException::forPageNotFound();
@@ -51,7 +52,7 @@ class Movies extends BaseController
         $id = $_POST['id'];
         $day = $_POST['hari'];
         $month = $_POST['bulan'];
-        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month")->getResult();
+        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month order by start_time ASC")->getResult();
         return json_encode($data['start_time']);
     }
 
@@ -62,6 +63,7 @@ class Movies extends BaseController
         $data['screening'] = $this->screenings
             ->join('movies', 'screenings.movie_id = movies.id')
             ->join('studios', 'screenings.studio_id = studios.id')
+            ->orderBy('start_time', 'ASC')
             ->where("screenings.id = $id")->findAll();
 
         $data['seats'] = $this->seats

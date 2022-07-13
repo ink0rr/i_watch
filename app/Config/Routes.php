@@ -42,8 +42,8 @@ $routes->get('/movies/(:num)', 'Movies::index/$1');
 $routes->post('/movies/get_start_time/', 'Movies::get_start_time');
 
 //authentication
-$routes->get('/masuk', 'Auth::login');
-$routes->get('/daftar', 'Auth::register');
+$routes->match(['get', 'post'], '/masuk', 'Auth::login');
+$routes->match(['get', 'post'], '/daftar', 'Auth::register');
 $routes->get('/lupa-password', 'Auth::forgetPassword');
 
 

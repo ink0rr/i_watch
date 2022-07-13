@@ -2,7 +2,7 @@
     <div class="container">
         <div class="align-items-center py-4">
             <div class="col">
-                <a href="<?= base_url() ?>" class="fw-bold" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> KEMBALI KE HALAMAN SEBELUMNYA</span></a>
+                <?= $breadcrumbs ?>
                 <div class="shadow-sm bg-light py-3 px-4">
                     <div class="d-flex">
                         <h4 class="fw-bold">NOW PLAYING</h4>
@@ -60,11 +60,76 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="<?= base_url('booking/' . $movie['id']) ?>" class="btn btn-lg bg-warning bg-opacity-75 rounded-0 text-black fw-bold shadow-none float-end w-25" style="font-size:15px;">Beli tiket</a>
                         </div>
+                    </div>
+                    <div class="d-flex mt-4 overflow">
+                        <?php
+                        setlocale(LC_ALL, 'id-ID', 'id_ID');
+                        $hari = array(
+                            1 =>    'Senin',
+                            'Selasa',
+                            'Rabu',
+                            'Kamis',
+                            'Jumat',
+                            'Sabtu',
+                            'Minggu'
+                        );
+                        $bulan = array(
+                            1 =>   'Januari',
+                            'Februari',
+                            'Maret',
+                            'April',
+                            'Mei',
+                            'Juni',
+                            'Juli',
+                            'Agustus',
+                            'September',
+                            'Oktober',
+                            'November',
+                            'Desember'
+                        );
+                        foreach ($screenings as $row) {
+                            $date = date_create($row['start_time']);
+                        ?>
+                            <a href="#" class="hari border border-dark rounded px-4 text-center text-black" data-hari="<?= date_format($date, 'd') ?>" data-bulan="<?= date_format($date, 'm') ?>">
+                                <p class="p-0 m-0 fw-bold"><?= $hari[date_format($date, 'N')] ?></p>
+                                <small><?= date_format($date, 'd') . " " . $bulan[date_format($date, 'n')] ?></small>
+                            </a>&nbsp;
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="d-flex mt-3 overflow">
+                        <h5 class="fw-bold text-muted">Jam Tayang</h5>
+                        <div id="#jadwal"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+        $(".hari").click(function() {
+            var hari = $(this).data("hari"),
+                bulan = $(this).data("bulan");
+
+            $.ajax({
+                url: "<?= site_url('movies/get_start_time/') ?>",
+                type: "post",
+                dataType: "json",
+                data: {
+                    id: <?= $movie['id'] ?>,
+                    hari: hari,
+                    bulan: bulan
+                },
+                success: function($data) {
+                    console.log(JSON.parse($data))
+                    $.each($data, function() {
+
+                    })
+                }
+            })
+        })
+    });
+</script>

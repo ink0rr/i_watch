@@ -6,8 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "codeigniter4/framework": "^4.0"
+        "codeigniter4/framework": "^4.0",
+        "geeklabs/ci4-breadcrumbs": "dev-main"
     },
+    "minimum-stability": "dev",
     "suggest": {
         "ext-fileinfo": "Improves mime type detection for files"
     },

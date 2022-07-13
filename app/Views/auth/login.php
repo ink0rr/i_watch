@@ -5,14 +5,18 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <!-- <a href="<?= base_url() ?>" class="text-white" style=" letter-spacing: 1px;"><span class="position-absolute px-3 py-2"><i class="fa-solid fa-chevron-left"></i> kembali ke halaman utama</span></a> -->
                             <img src="<?= base_url('assets/images/login-background.png') ?>" alt="login-image" class="img-fluid" style="border-top-left-radius: 9px; border-bottom-left-radius: 9px;" />
-                            <a href="<?= base_url() ?>" class="text-decoration-none" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> kembali ke homepage</span></a>
+                            <a href="<?= base_url() ?>" class="text-decoration-none" style="color:#371B58;"><span class="position-absolute px-3 py-2 auth-back-button"><i class="fa-solid fa-arrow-left-long"></i> Kembali ke homepage</span></a>
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
+                                <form action="" method="POST">
 
-                                <form action="#" method="GET">
+                                    <?php if (isset($validation)) : ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $validation->listErrors() ?>
+                                        </div>
+                                    <?php endif; ?>
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <img src="<?= base_url('assets/logo-dark.png') ?>" alt="IOO Watch" width="224" height="55">
@@ -21,19 +25,19 @@
                                     <h5 class="fw-light mb-3 pb-3" style="letter-spacing: 1px;">Hiburan serumu dimulai disini.</h5>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="email-input" class="form-control form-control-lg" />
-                                        <label class="form-label" for="email-input">Email address</label>
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg" value="<?= set_value('email') ?>" />
+                                        <label class="form-label" for="email">Email Address</label>
                                     </div>
 
                                     <div class="form-outline mb-1">
-                                        <input type="password" id="password-input" class="form-control form-control-lg" />
-                                        <label class="form-label" for="password-input">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control form-control-lg" value="" />
+                                        <label class="form-label" for="password">Password</label>
                                     </div>
                                     <div class="text-end">
                                         <a href="<?= base_url("/lupa-password") ?>">Lupa Password?</a>
                                     </div>
                                     <div class="pt-3 text-center">
-                                        <button class="btn btn-lg px-5 py-2 auth-button fw-bold text-white" type="submit">Masuk</button>
+                                        <button class="btn btn-lg px-5 py-2 auth-button fw-bold text-white" type="submit" name="login">Masuk</button>
                                     </div>
 
                                 </form>
@@ -53,7 +57,7 @@
     document.querySelectorAll('.form-outline').forEach((formOutline) => {
         new mdb.Input(formOutline).init();
     });
-    $(document).ready(function() {
+    jQuery(function() {
         anime({
             duration: 700,
             targets: '.ease',
@@ -62,7 +66,7 @@
             easing: 'easeInOutQuad',
         });
 
-    })
+    });
 </script>
 </body>
 

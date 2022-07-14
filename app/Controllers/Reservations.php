@@ -5,22 +5,23 @@ namespace App\Controllers;
 use App\Libraries\Breadcrumb;
 use App\Models;
 use CodeIgniter\Exceptions\PageNotFoundException;
-use App\Controllers\BaseController;
 
 
 class Reservations extends BaseController
 {
+    private Breadcrumb $breadcrumb;
     private Models\Seats $seats;
     private Models\Screenings $screenings;
+    private Models\Movies $movies;
 
     public function __construct()
     {
-        $this->db = \Config\Database::connect();
         $this->breadcrumb = new Breadcrumb();
         $this->seats = model(Models\Seats::class);
         $this->screenings = model(Models\Screenings::class);
         $this->movies = model(Models\Movies::class);
     }
+
     public function index($id, $id_screenings)
     {
         $data['movie'] = $this->screenings
@@ -29,13 +30,10 @@ class Reservations extends BaseController
             ->where("screenings.movie_id = $id")
             ->where("screenings.id = $id_screenings")->find();
 
-
         $data['seats'] = $this->seats
             ->join('reservations', 'seats.id = reservations.seat_id', 'left')
             ->where("screening_id = $id_screenings")
             ->select('seats.name')->findAll();
-
-        // dd($data['movie'], $data['seats']);
 
         if (empty($data['movie'])) {
             throw PageNotFoundException::forPageNotFound();

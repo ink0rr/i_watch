@@ -8,26 +8,25 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Movies extends BaseController
 {
+    private Breadcrumb $breadcrumb;
     private Models\Movies $movies;
+    private Models\Screenings $screenings;
 
     public function __construct()
     {
-        $this->db = \Config\Database::connect();
         $this->breadcrumb = new Breadcrumb();
         $this->movies = model(Models\Movies::class);
+        $this->screenings = model(Models\Screenings::class);
     }
 
     public function index(int $id): string
     {
         $data['movie'] = $this->movies->find($id);
 
-        $this->db = \Config\Database::connect();
-        $data['screenings'] = $this->db->query("SELECT * 
-        FROM screenings 
-        WHERE movie_id = $id 
-        GROUP BY DAY(start_time)
-        ORDER BY start_time ASC")->getResultArray();
-
+        $data['screenings'] = $this->screenings
+            ->where("movie_id = $id GROUP BY DAY(start_time)")
+            ->orderBy('start_time')
+            ->findAll();
         if ($data['movie'] === null) {
             throw PageNotFoundException::forPageNotFound();
         }
@@ -46,7 +45,13 @@ class Movies extends BaseController
         $id = $_POST['id'];
         $day = $_POST['hari'];
         $month = $_POST['bulan'];
-        $data['start_time'] = $this->db->query("SELECT id, movie_id, start_time FROM screenings WHERE movie_id = $id AND DAY(start_time) = $day AND MONTH(start_time) = $month ORDER BY start_time ASC")->getResult();
+
+        $data['start_time'] = $this->screenings
+            ->select("id, movie_id, start_time")
+            ->where('movie_id', $id)
+            ->where('DAY(start_time)', $day)
+            ->where('MONTH(start_time)', $month)
+            ->orderBy('start_time')->findAll();
         return json_encode($data['start_time']);
     }
 }

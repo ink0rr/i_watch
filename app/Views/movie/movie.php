@@ -119,8 +119,8 @@
     </div>
 </section>
 <script>
-    $(document).ready(function() {
-        $(" .hari").click(function() {
+    jQuery(function() {
+        $(".hari").on('click', function() {
             const clickBtn = $(this);
             const hari = $(this).data("hari");
             const bulan = $(this).data("bulan");
@@ -141,14 +141,12 @@
                     });
                     const data = JSON.parse($data);
                     $.each(data, function(index, value) {
-                        console.log(index, value);
-                        console.log(value['start_time']);
-                        var date = new Date(),
-                            start_time = new Date(value['start_time']),
-                            temp_hours = start_time.getHours(),
-                            hours = ("0" + temp_hours).slice(-2),
-                            temp_minutes = start_time.getMinutes(),
-                            minutes = ("0" + temp_minutes).slice(-2);
+                        const date = new Date();
+                        const start_time = new Date(value['start_time']);
+                        const temp_hours = start_time.getHours();
+                        const hours = ("0" + temp_hours).slice(-2);
+                        const temp_minutes = start_time.getMinutes();
+                        const minutes = ("0" + temp_minutes).slice(-2);
                         if (date > start_time) {
                             jadwal.append("<a class='btn border border-dark rounded text-center text-white fw-bold' style='margin-right:0.25rem;width:100px; background-color:gray;cursor:not-allowed'>" + hours + ":" + minutes + "</a>");
                         } else {

@@ -80,6 +80,12 @@ class Auth extends BaseController
         return view('auth/header', $data)
             . view('auth/forget-password');
     }
+    
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
 
     private function setUserSession($user)
     {
@@ -89,11 +95,5 @@ class Auth extends BaseController
             'email' => $user['email'],
             'isLoggedIn' => true,
         ]);
-    }
-
-    public function logout()
-    {
-        session()->destroy();
-        return redirect()->to('/');
     }
 }

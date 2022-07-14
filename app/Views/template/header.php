@@ -43,11 +43,22 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link active" href="<?= base_url("/daftar") ?>">Daftar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="<?= base_url("/masuk") ?>">Masuk</a>
+                        </li> -->
+                        <li class="nav-item text-white">
+                            <div class="dropdown">
+                                <span class="dropdown-toggle" type="span" id="dropdownMenuspan" data-mdb-toggle="dropdown" aria-expanded="false" style="cursor:pointer">
+                                    <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> Mr.White
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -73,11 +84,22 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 ">
-                        <li class="nav-item sticky-item" style="transform:translateY(-77px);">
+                        <!-- <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                             <a class="nav-link active" href="<?= base_url("/daftar") ?>">Daftar</a>
                         </li>
                         <li class="nav-item sticky-item" style="transform:translateY(-77px);">
                             <a class="nav-link active" href="<?= base_url("/masuk") ?>">Masuk</a>
+                        </li> -->
+                        <li class="nav-item text-black">
+                            <div class="dropdown">
+                                <span class="dropdown-toggle" type="span" id="dropdownMenuspan" data-mdb-toggle="dropdown" aria-expanded="false" style="cursor:pointer">
+                                    <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> Mr.White
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>

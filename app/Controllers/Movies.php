@@ -52,7 +52,7 @@ class Movies extends BaseController
         $id = $_POST['id'];
         $day = $_POST['hari'];
         $month = $_POST['bulan'];
-        $data['start_time'] = $this->db->query("select start_time from screenings where movie_id = $id and DAY(start_time) = $day and MONTH(start_time) = $month order by start_time ASC")->getResult();
+        $data['start_time'] = $this->db->query("SELECT start_time FROM screenings WHERE movie_id = $id AND DAY(start_time) = $day AND MONTH(start_time) = $month ORDER BY start_time ASC")->getResult();
         return json_encode($data['start_time']);
     }
 

@@ -15,7 +15,7 @@ class Movies extends Migration
                 'constraint' => '255'
             ],
             'description' => [
-                'type' => 'VARCHAR',
+                'type' => 'TEXT',
                 'constraint' => '255'
             ],
             'duration' => [

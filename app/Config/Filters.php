@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Filters\Auth;
+use App\Filters\Noauth;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -18,11 +20,13 @@ class Filters extends BaseConfig
      * @var array
      */
     public $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
+        'csrf' => CSRF::class,
+        'toolbar' => DebugToolbar::class,
+        'honeypot' => Honeypot::class,
+        'invalidchars' => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'auth' => Auth::class,
+        'noauth' => Noauth::class,
     ];
 
     /**

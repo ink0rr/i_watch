@@ -83,11 +83,17 @@ class Auth extends BaseController
 
     private function setUserSession($user)
     {
-        session()->set('user', [
+        session()->set([
             'id' => $user['id'],
             'name' => $user['name'],
             'email' => $user['email'],
             'isLoggedIn' => true,
         ]);
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
     }
 }

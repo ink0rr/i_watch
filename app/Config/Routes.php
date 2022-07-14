@@ -45,7 +45,7 @@ $routes->post('/movies/get_start_time/', 'Movies::get_start_time');
 $routes->match(['get', 'post'], '/masuk', 'Auth::login');
 $routes->match(['get', 'post'], '/daftar', 'Auth::register');
 $routes->get('/lupa-password', 'Auth::forgetPassword');
-
+$routes->get('/logout', 'Auth::logout');
 
 //reservation
 $routes->get('/reservasi/(:num)/(:num)', 'Reservations::index/$1/$2');

@@ -13,6 +13,7 @@
                 <div class="col-md-4">
                     <div class="shadow-sm bg-light p-3 rounded">
                         <?php foreach ($movie as $row) : ?>
+                            <input type="hidden" class="price" data-harga="<?= $row['price'] ?>">
                             <div class="row border-bottom border-muted">
                                 <div class="col-2">
                                     <img src="<?= base_url("uploads/movies/{$row['movie_id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
@@ -76,6 +77,7 @@
         const $cart = $('.selected-seats');
         const $counter = $('.counter');
         const $total = $('#total');
+        const $price = $('.price').data("harga");
         const sc = $('#seat-map').seatCharts({
             map: [
                 'eeee_eeee_eeee',
@@ -92,7 +94,7 @@
             ],
             seats: {
                 e: {
-                    price: 50000,
+                    price: parseInt($price),
                     category: '',
                 },
             },

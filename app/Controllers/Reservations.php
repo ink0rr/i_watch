@@ -27,7 +27,7 @@ class Reservations extends BaseController
             ->join("movies", "screenings.movie_id = movies.id")
             ->join('studios', 'screenings.studio_id = studios.id')
             ->where("screenings.movie_id = $id")
-            ->where("screenings.id = $id_screenings")->findAll();
+            ->where("screenings.id = $id_screenings")->find();
 
 
         $data['seats'] = $this->seats

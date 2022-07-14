@@ -152,7 +152,7 @@
                         if (date > start_time) {
                             jadwal.append("<a class='btn border border-dark rounded text-center text-white fw-bold' style='margin-right:0.25rem;width:100px; background-color:gray;cursor:not-allowed'>" + hours + ":" + minutes + "</a>");
                         } else {
-                            jadwal.append("<a class='btn border border-dark rounded text-center text-black fw-bold' style='margin-right:0.25rem;width:100px;'>" + hours + ":" + minutes + "</a>");
+                            jadwal.append("<a href='<?= base_url() ?>/reservasi/" + value['movie_id'] + "/" + value['id'] + "' class='btn border border-dark rounded text-center text-black fw-bold' style='margin-right:0.25rem;width:100px;'>" + hours + ":" + minutes + "</a>");
                         }
                     });
                 },

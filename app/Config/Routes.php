@@ -48,7 +48,7 @@ $routes->get('/lupa-password', 'Auth::forgetPassword');
 
 
 //reservation
-$routes->get('/reservasi/(:num)', 'Movies::reservations/$1');
+$routes->get('/reservasi/(:num)/(:num)', 'Reservations::index/$1/$2');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

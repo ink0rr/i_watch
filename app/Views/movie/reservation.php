@@ -12,10 +12,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="shadow-sm bg-light p-3 rounded">
-                        <?php foreach ($screening as $row) : ?>
+                        <?php foreach ($movie as $row) : ?>
                             <div class="row border-bottom border-muted">
                                 <div class="col-2">
-                                    <img src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
+                                    <img src="<?= base_url("uploads/movies/{$row['movie_id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
                                 </div>
                                 <div class="col-10 ">
                                     <h5 class="mb-0 fw-bold" style="color:#4C3575">
@@ -36,7 +36,7 @@
                                         ?> |
                                         <?php
                                         $date = date_create($row['start_time']);
-                                        echo date_format($date, 'h:m');
+                                        echo date_format($date, 'H:i');
                                         ?>
 
                                     </small>

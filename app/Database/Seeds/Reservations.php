@@ -26,7 +26,17 @@ class Reservations extends Seeder
             ],
             [
                 'screening_id' => 2,
-                'seat_id' => 2,
+                'seat_id' => 23,
+                'paid' => true
+            ],
+            [
+                'screening_id' => 2,
+                'seat_id' => 24,
+                'paid' => true
+            ],
+            [
+                'screening_id' => 2,
+                'seat_id' => 25,
                 'paid' => true
             ]
         ]);

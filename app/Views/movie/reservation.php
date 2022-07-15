@@ -131,13 +131,13 @@
                         .data('seatId', this.settings.id)
                         .appendTo($cart);
 
-                    $counter_val.attr('value', sc.find('selected').length + 1);
+                    $counter_val.attr('value', recalculateTotal(sc) + this.data().price);
                     $counter.text(sc.find('selected').length + 1);
                     $total.text(recalculateTotal(sc) + this.data().price);
 
                     return 'selected';
                 } else if (this.status() === 'selected') {
-                    $counter_val.attr('value', sc.find('selected').length - 1);
+                    $counter_val.attr('value', recalculateTotal(sc) - this.data().price);
                     $counter.text(sc.find('selected').length - 1);
                     $total.text(recalculateTotal(sc) - this.data().price);
 

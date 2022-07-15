@@ -80,21 +80,46 @@ class Reservations extends BaseController
                 }
             }
             $screening_id = $this->request->getPost('screening_id');
-            $data['movie'] = $this->reservations
+            $data['reservation'] = $this->reservations
                 ->join("screenings", "reservations.screening_id = screenings.id")
-                ->join("users", "reservations.user_id = users.id")
                 ->join("movies", "screenings.movie_id = movies.id")
+                ->join("users", "reservations.user_id = users.id")
                 ->join('studios', 'screenings.studio_id = studios.id')
                 ->where("reservations.paid = 0")
                 ->where("reservations.user_id =" . session()->get('id'))
                 ->where("reservations.screening_id = $screening_id")->find();
 
-            $data['title'] = $data['movie'][0]['title'];
+            $data['seats'] = $this->reservations
+                ->join("seats", "reservations.seat_id = seats.id")
+                ->where("reservations.screening_id = $screening_id")->findAll();
+
+            // dd((array)$data['movie']);
+            $data['total_price'] = $this->request->getPost('total');
+
+            $data['title'] = $data['reservation'][0]['title'];
             return view('template/header', $data)
                 . view('movie/payment')
                 . view('template/footer');
         } else {
             throw PageNotFoundException::forPageNotFound();
         }
+    }
+
+    public function buy($id)
+    {
+        $this->reservations->set('paid', 1)
+            ->where("screening_id = $id")
+            ->where("user_id = " . session()->get('id'))
+            ->update();
+        return redirect()->to(base_url());
+    }
+
+    public function cancel($id)
+    {
+        $this->reservations
+            ->where("screening_id = $id")
+            ->where("user_id = " . session()->get('id'))
+            ->delete();
+        return redirect()->to(base_url());
     }
 }

@@ -366,3 +366,15 @@ ul.selected-seats-display li {
     padding-left: 5px !important;
     font-weight: bold !important;
 }
+
+/* end for reservations */
+
+/* for payment */
+.container-payment {
+    width: 60% !important;
+}
+
+.attribute-payment {
+    padding-left: 5px !important;
+    padding-right: 0px !important;
+}

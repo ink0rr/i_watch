@@ -50,6 +50,9 @@ $routes->get('/logout', 'Auth::logout');
 //reservation
 $routes->get('/reservasi/(:num)/(:num)', 'Reservations::index/$1/$2', ['filter' => 'auth']);
 $routes->match(['get', 'post'], '/reservasi/pembayaran', 'Reservations::payment', ['filter' => 'auth']);
+$routes->get('/reservasi/pembayaran/bayar/(:num)', 'Reservations::buy/$1', ['filter' => 'auth']);
+$routes->get('/reservasi/pembayaran/batal/(:num)', 'Reservations::cancel/$1', ['filter' => 'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

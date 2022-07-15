@@ -5,7 +5,7 @@ html {
 /* for top background */
 .top-bg {
     width: 100%;
-    height: 650px;
+    height: 530px;
     background-color: #4C3575;
 }
 
@@ -90,71 +90,6 @@ html {
 
 /* end for homepage cari-bioskop */
 
-/* for spotlight */
-.card-spotlight {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    overflow: hidden;
-}
-
-.card-spotlight img {
-    max-width: 100%;
-}
-
-.card-spotlight .img-flex {
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-}
-
-.card-spotlight .middle-title {
-    /* text-align: center; */
-    text-align: left;
-    padding-top: 10px;
-    padding-right: 5px;
-}
-
-.card-spotlight .middle-title a {
-    color: #040404;
-}
-
-.card-spotlight .middle-title a:hover {
-    text-decoration: none;
-    color: #6e6d6d;
-}
-
-.card-spotlight .middle-title,
-.card-spotlight .middle-subtitle,
-.card-spotlight .middle-news {
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-.card-spotlight .middle-news {
-    text-align: left;
-    word-wrap: break-word;
-}
-
-#spotlight .slick-prev:before {
-    font-size: 30px !important;
-    color: black !important;
-}
-
-#spotlight .slick-next:before {
-    font-size: 30px !important;
-    color: black !important;
-}
-
-#spotlight .slick-dots li button:before {
-    color: #371B58 !important;
-}
-
-/* end for spotlight */
 
 /* for our member */
 .anggota-kami-bg {

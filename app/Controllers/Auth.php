@@ -61,7 +61,7 @@ class Auth extends BaseController
                         'email' => $this->request->getPost('email'),
                         'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
                     ]);
-                    return redirect()->to(base_url());
+                    return redirect()->to(base_url('/masuk'));
                 } catch (Exception $e) {
                     dd((array)$e);
                 }

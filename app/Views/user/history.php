@@ -4,7 +4,7 @@
             <?= $breadcrumbs ?>
             <div class="shadow-sm bg-light p-4">
                 <div class="col">
-                    <div class="d-flex justify-content-center border-bottom border-muted border-2">
+                    <div class="d-flex justify-content-center">
                         <h4 class="fw-bold" color>Riwayat Pemesanan Anda</h4>
                     </div>
                     <?php
@@ -18,7 +18,7 @@
                                 <div class="col-md-9">
                                     <h5 class="fw-bold my-0" style="color: #4C3575;"><?= $row['title'] ?></h5>
                                     <p class="my-0 fw-bold"><?= $row['name'] ?></p>
-                                    <div class="row border-top">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <p class="fw-bold my-0 text-muted" style="color: #4C3575;">Tanggal</p>
                                         </div>
@@ -54,7 +54,7 @@
                                             <p class="mt-0"><?= date_format($date, 'h:m') ?></p>
                                         </div>
                                     </div>
-                                    <div class="row border-top">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <p class="fw-bold my-0 text-muted" style="color: #4C3575;">Tempat duduk</p>
                                         </div>

@@ -111,7 +111,7 @@ class Reservations extends BaseController
             ->where("screening_id = $id")
             ->where("user_id = " . session()->get('id'))
             ->update();
-        return redirect()->to(base_url());
+        return redirect()->to(base_url('/tiket'));
     }
 
     public function cancel($id)
@@ -121,5 +121,51 @@ class Reservations extends BaseController
             ->where("user_id = " . session()->get('id'))
             ->delete();
         return redirect()->to(base_url());
+    }
+
+    public function ticket()
+    {
+        $data['reservation'] = $this->reservations
+            ->join("screenings", "reservations.screening_id = screenings.id")
+            ->join("movies", "screenings.movie_id = movies.id")
+            ->join("users", "reservations.user_id = users.id")
+            ->join('studios', 'screenings.studio_id = studios.id')
+            ->where("reservations.paid = 1")
+            ->where("reservations.user_id =" . session()->get('id'))
+            ->where("screenings.start_time > " . date('now'))
+            ->groupBy("screening_id")
+            ->findAll();
+
+        $data['title'] = "IOO Watch - Tiket";
+        $this->breadcrumb->add('Beranda', '/');
+        $this->breadcrumb->add('Tiket', '/tiket');
+        $data['breadcrumbs'] = $this->breadcrumb->render();
+
+        return view('template/header', $data)
+            . view('user/ticket')
+            . view('template/footer');
+    }
+
+    public function history()
+    {
+        $data['history'] = $this->reservations
+            ->join("screenings", "reservations.screening_id = screenings.id")
+            ->join("movies", "screenings.movie_id = movies.id")
+            ->join("users", "reservations.user_id = users.id")
+            ->join('studios', 'screenings.studio_id = studios.id')
+            ->where("reservations.paid = 1")
+            ->where("reservations.user_id =" . session()->get('id'))
+            ->where("screenings.start_time < " . date('now'))
+            ->groupBy("screening_id")
+            ->findAll();
+
+        $data['title'] = "IOO Watch - History";
+        $this->breadcrumb->add('Beranda', '/');
+        $this->breadcrumb->add('Riwayat', '/riwayat');
+        $data['breadcrumbs'] = $this->breadcrumb->render();
+
+        return view('template/header', $data)
+            . view('user/history')
+            . view('template/footer');
     }
 }

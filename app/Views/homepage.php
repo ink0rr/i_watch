@@ -323,57 +323,32 @@
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-md-4 mb-5">
                         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Ari Candra Kusuma</h5><span class="small text-uppercase text-muted">Programmer</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
+                            <h5 class="mb-0">Ari Candra Kusuma</h5><span class="small text-uppercase text-muted">front-end developer</span>
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Joko Sulistyo</h5><span class="small text-uppercase text-muted">Programmer</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
+                            <h5 class="mb-0">Joko Sulistyo</h5><span class="small text-uppercase text-muted">ui/ux designer</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/team/naufal.jpg") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">Naufal Fadhilah Alwan</h5><span class="small text-uppercase text-muted">Front-End Developer</span>
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Naufal Fadhilah Alwan</h5><span class="small text-uppercase text-muted">Programmer</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
+                            <h5 class="mb-0">Tomflynn Beltsazar</h5><span class="small text-uppercase text-muted">back-end developer</span>
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Tomflynn Beltsazar</h5><span class="small text-uppercase text-muted">Programmer</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Viona Cornellia</h5><span class="small text-uppercase text-muted">Programmer</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
+                            <h5 class="mb-0">Viona Cornellia</h5><span class="small text-uppercase text-muted">ui/ux designer</span>
+
                         </div>
                     </div>
                 </div>

@@ -80,10 +80,14 @@ class Reservations extends BaseController
                 }
             }
             $screening_id = $this->request->getPost('screening_id');
-            $data['movie'] = $this->screenings
+            $data['movie'] = $this->reservations
+                ->join("screenings", "reservations.screening_id = screenings.id")
+                ->join("users", "reservations.user_id = users.id")
                 ->join("movies", "screenings.movie_id = movies.id")
                 ->join('studios', 'screenings.studio_id = studios.id')
-                ->where("screenings.id = $screening_id")->find();
+                ->where("reservations.paid = 0")
+                ->where("reservations.user_id =" . session()->get('id'))
+                ->where("reservations.screening_id = $screening_id")->find();
 
             $data['title'] = $data['movie'][0]['title'];
             return view('template/header', $data)

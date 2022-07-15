@@ -10,6 +10,9 @@ class Reservations extends Migration
     {
         $this->forge->addField('id');
         $this->forge->addField([
+            'user_id' => [
+                'type' => 'INT'
+            ],
             'screening_id' => [
                 'type' => 'INT'
             ],
@@ -21,6 +24,7 @@ class Reservations extends Migration
             ]
         ]);
 
+        $this->forge->addForeignKey('user_id', 'users', 'id');
         $this->forge->addForeignKey('screening_id', 'screenings', 'id');
         $this->forge->addForeignKey('seat_id', 'seats', 'id');
 

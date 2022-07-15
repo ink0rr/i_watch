@@ -12,6 +12,7 @@ class All extends Seeder
         $this->call('Studios');
         $this->call('Seats');
         $this->call('Screenings');
+        $this->call('Users');
         $this->call('Reservations');
     }
 }

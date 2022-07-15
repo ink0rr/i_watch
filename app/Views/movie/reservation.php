@@ -48,9 +48,10 @@
                         <div id="legend"></div>
                     </div>
                     <div class="shadow-sm bg-light rounded mt-4">
-                        <form action="#" method="post">
-                            <input type="hidden" class="counter">
-                            <select hidden name="seat[]" class="selected-seats"></select>
+                        <form action="<?= base_url('/reservasi/pembayaran') ?>" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="screening_id" value="<?= $screenings['id'] ?>">
+                            <input type="hidden" class="counter-val" name="total" value="">
+                            <select hidden name="seat[]" class="selected-seats" multiple="multiple"></select>
                             <div class="booking-details p-1">
                                 <div class="border-bottom border-muted">
                                     <h5 class="fw-bold text-muted px-3 pt-2 pb-1"> Tempat duduk yang dibeli (<span class="counter">0</span>):</h5>
@@ -76,6 +77,7 @@
         const $cart_display = $('.selected-seats-display');
         const $cart = $('.selected-seats');
         const $counter = $('.counter');
+        const $counter_val = $('.counter-val');
         const $total = $('#total');
         const $price = $('.price').data("harga");
         const sc = $('#seat-map').seatCharts({
@@ -124,16 +126,18 @@
 
                     $('<option selected>R' + (this.settings.row + 1) + ' L' + this.settings.label + ' P' + this.settings.data.price + '</option>')
                         .attr('data-group', 'cart-item-' + this.settings.id)
-                        .attr('value', this.settings.id + '|' + this.settings.data.price)
+                        .attr('value', this.settings.id)
                         .attr('alt', this.settings.data.price)
                         .data('seatId', this.settings.id)
                         .appendTo($cart);
 
+                    $counter_val.attr('value', sc.find('selected').length + 1);
                     $counter.text(sc.find('selected').length + 1);
                     $total.text(recalculateTotal(sc) + this.data().price);
 
                     return 'selected';
                 } else if (this.status() === 'selected') {
+                    $counter_val.attr('value', sc.find('selected').length - 1);
                     $counter.text(sc.find('selected').length - 1);
                     $total.text(recalculateTotal(sc) - this.data().price);
 
@@ -152,8 +156,7 @@
         $cart_display.on('click', '.cancel-cart-item', function() {
             sc.get($(this).parents('li:first').data('seatId')).click();
         });
-        <?php foreach ($seats as $row) : ?>
-            sc.get(['<?= $row['name'] ?>']).status('unavailable');
+        <?php foreach ($seats as $row) : ?> sc.get(['<?= $row['name'] ?>']).status('unavailable');
         <?php endforeach; ?>
     });
 

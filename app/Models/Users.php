@@ -12,8 +12,6 @@ class Users extends Model
     protected $allowedFields = [
         'name',
         'email',
-        'password',
+        'password'
     ];
-
-
 }

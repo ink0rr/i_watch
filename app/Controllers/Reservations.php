@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Libraries\Breadcrumb;
 use App\Models;
 use CodeIgniter\Exceptions\PageNotFoundException;
+use Exception;
 
 
 class Reservations extends BaseController
@@ -12,7 +13,6 @@ class Reservations extends BaseController
     private Breadcrumb $breadcrumb;
     private Models\Seats $seats;
     private Models\Screenings $screenings;
-    private Models\Movies $movies;
 
     public function __construct()
     {
@@ -20,10 +20,13 @@ class Reservations extends BaseController
         $this->seats = model(Models\Seats::class);
         $this->screenings = model(Models\Screenings::class);
         $this->movies = model(Models\Movies::class);
+        $this->reservations = model(Models\Reservations::class);
+        helper(['form']);
     }
 
     public function index($id, $id_screenings)
     {
+        $data['screenings'] = $this->screenings->find($id_screenings);
         $data['movie'] = $this->screenings
             ->join("movies", "screenings.movie_id = movies.id")
             ->join('studios', 'screenings.studio_id = studios.id')
@@ -50,5 +53,44 @@ class Reservations extends BaseController
         return view('template/header', $data)
             . view('movie/reservation')
             . view('template/footer');
+    }
+
+    public function payment()
+    {
+        if ($this->request->getMethod() === 'post') {
+            // var_dump($this->request->getPost('total'));
+            // $seat = (isset($_POST['seat']) ? $_POST['seat'] : array());
+            $seat = $this->request->getPost('seat');
+            // var_dump($seat);
+            if (is_array($seat)) {
+                try {
+                    foreach ($seat as $row) {
+                        $seat_id = $this->seats
+                            ->where('name', $row)
+                            ->find();
+                        $this->reservations->save([
+                            'user_id' => session()->get('id'),
+                            'screening_id' => $this->request->getPost('screening_id'),
+                            'seat_id' => $seat_id[0]['id'],
+                            'paid' => 0
+                        ]);
+                    }
+                } catch (Exception $e) {
+                    dd((array)$e);
+                }
+            }
+            $screening_id = $this->request->getPost('screening_id');
+            $data['movie'] = $this->screenings
+                ->join("movies", "screenings.movie_id = movies.id")
+                ->join('studios', 'screenings.studio_id = studios.id')
+                ->where("screenings.id = $screening_id")->find();
+
+            $data['title'] = $data['movie'][0]['title'];
+            return view('template/header', $data)
+                . view('movie/payment')
+                . view('template/footer');
+        } else {
+            throw PageNotFoundException::forPageNotFound();
+        }
     }
 }

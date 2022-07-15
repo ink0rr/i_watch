@@ -12,11 +12,11 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->users = model(Models\Users::class);
+        helper(['form']);
     }
 
     public function login()
     {
-        helper(['form']);
         if ($this->request->getMethod() === 'post') {
             $rules = [
                 'email' => 'required|min_length[6]|max_length[50]|valid_email',
@@ -35,7 +35,7 @@ class Auth extends BaseController
                     ->first();
 
                 $this->setUserSession($user);
-                return redirect()->to('/');
+                return redirect()->to(base_url());
             }
         }
         $data['title'] = 'Login - IOO Watch';
@@ -45,7 +45,6 @@ class Auth extends BaseController
 
     public function register()
     {
-        helper(['form']);
         if ($this->request->getMethod() === 'post') {
             $rules = [
                 'name' => 'required|min_length[3]|max_length[20]',
@@ -62,7 +61,7 @@ class Auth extends BaseController
                         'email' => $this->request->getPost('email'),
                         'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
                     ]);
-                    return redirect()->to('/');
+                    return redirect()->to(base_url());
                 } catch (Exception $e) {
                     dd((array)$e);
                 }
@@ -80,11 +79,11 @@ class Auth extends BaseController
         return view('auth/header', $data)
             . view('auth/forget-password');
     }
-    
+
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/');
+        return redirect()->to(base_url());
     }
 
     private function setUserSession($user)

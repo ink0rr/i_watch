@@ -88,10 +88,10 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 ">
                         <?php if (session()->get('isLoggedIn')) : ?>
-                            <li class="nav-item text-black">
+                            <li class="nav-item text-black sticky-item" style="transform:translateY(-77px);">
                                 <div class="dropdown">
                                     <span class="dropdown-toggle" type="span" id="dropdownMenuspan" data-mdb-toggle="dropdown" aria-expanded="false" style="cursor:pointer">
-                                        <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> Mr.White
+                                        <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> <?= session()->get('name') ?>
                                     </span>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                         <li><a class="dropdown-item" href="#">Profile</a></li>

@@ -10,9 +10,9 @@ class Reservations extends Model
     protected $primaryKey = 'id';
 
     protected $allowedFields = [
-        'movie_id',
-        'studio_id',
-        'price',
-        'start_time',
+        'user_id',
+        'screening_id',
+        'seat_id',
+        'paid'
     ];
 }

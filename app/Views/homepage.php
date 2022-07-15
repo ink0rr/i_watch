@@ -322,13 +322,13 @@
 
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-md-4 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/team/ari.jpg") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                             <h5 class="mb-0">Ari Candra Kusuma</h5><span class="small text-uppercase text-muted">front-end developer</span>
 
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/team/joko.jpg") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                             <h5 class="mb-0">Joko Sulistyo</h5><span class="small text-uppercase text-muted">ui/ux designer</span>
 
                         </div>
@@ -340,13 +340,13 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/team/tomflynn.jpg") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                             <h5 class="mb-0">Tomflynn Beltsazar</h5><span class="small text-uppercase text-muted">back-end developer</span>
 
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/images/placeholder-user.png") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url("assets/team/viona.jpeg") ?>" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                             <h5 class="mb-0">Viona Cornellia</h5><span class="small text-uppercase text-muted">ui/ux designer</span>
 
                         </div>

@@ -132,7 +132,8 @@ class Reservations extends BaseController
             ->join('studios', 'screenings.studio_id = studios.id')
             ->where("reservations.paid = 1")
             ->where("reservations.user_id =" . session()->get('id'))
-            ->where("screenings.start_time > " . date('now'))
+            ->where("screenings.start_time >= NOW()")
+            ->orderBy("reservations.id", "DESC")
             ->groupBy("screening_id")
             ->findAll();
 
@@ -155,8 +156,9 @@ class Reservations extends BaseController
             ->join('studios', 'screenings.studio_id = studios.id')
             ->where("reservations.paid = 1")
             ->where("reservations.user_id =" . session()->get('id'))
-            ->where("screenings.start_time < " . date('now'))
+            ->where("screenings.start_time < NOW()")
             ->groupBy("screening_id")
+            ->orderBy("reservations.id", "DESC")
             ->findAll();
 
         $data['title'] = "IOO Watch - History";

@@ -10,8 +10,14 @@ class Movies extends Model
     protected $primaryKey = 'id';
 
     protected $allowedFields = [
+        'image',
         'title',
         'description',
         'duration',
+        'genre',
+        'age_rating',
+        'director',
+        'writer',
+        'stars'
     ];
 }

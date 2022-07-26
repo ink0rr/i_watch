@@ -22,6 +22,9 @@ class Users extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255'
             ],
+            'status' => [
+                'type' => 'bool'
+            ]
         ]);
 
         $this->forge->createTable('users', TRUE);

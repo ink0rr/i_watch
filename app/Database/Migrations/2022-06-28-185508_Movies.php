@@ -10,6 +10,10 @@ class Movies extends Migration
     {
         $this->forge->addField('id');
         $this->forge->addField([
+            'image' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
             'title' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255'

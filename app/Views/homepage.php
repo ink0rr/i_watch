@@ -8,7 +8,7 @@
                     foreach ($movies as $movie) : ?>
                         <div>
                             <a href="<?= "movies/{$movie['id']}" ?>">
-                                <img class="movie-thumbnail" src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="<?= $movie['title'] ?>">
+                                <img class="movie-thumbnail" src="<?= base_url("uploads/movies/{$movie['image']}") ?>" alt="<?= $movie['title'] ?>">
                             </a>
                         </div>
                 <?php endforeach;

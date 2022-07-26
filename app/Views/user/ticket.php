@@ -13,7 +13,7 @@
                     ?>
                             <div class="row mt-2 border-top border-2 border-muted pt-2">
                                 <div class="col-md-3">
-                                    <img class="img-fluid" src="<?= base_url("uploads/movies/{$row['movie_id']}.jpg") ?>" alt="<?= $row['title'] ?>">
+                                    <img class="img-fluid" src="<?= base_url("uploads/movies/{$row['image']}") ?>" alt="<?= $row['title'] ?>">
                                 </div>
                                 <div class="col-md-9">
                                     <h5 class="fw-bold my-0" style="color: #4C3575;"><?= $row['title'] ?></h5>

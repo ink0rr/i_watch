@@ -55,6 +55,33 @@ $routes->get('/reservasi/pembayaran/batal/(:num)', 'Reservations::cancel/$1', ['
 $routes->get('/tiket/', 'Reservations::ticket', ['filter' => 'auth']);
 $routes->get('/riwayat/', 'Reservations::history', ['filter' => 'auth']);
 
+//admin
+$routes->get('/admin', 'admin::index');
+
+//admin - movies
+$routes->get('/admin/movies', 'Admin::movies', ['filter' => 'auth']);
+$routes->get('/admin/movies/add', 'Movies::add_movie', ['filter' => 'auth']);
+$routes->post('/admin/movies/add-movie', 'Movies::insert', ['filter' => 'auth']);
+$routes->get('/admin/movies/delete/(:num)', 'Movies::delete/$1', ['filter' => 'auth']);
+$routes->get('/admin/movies/edit/(:num)', 'Movies::edit_movie/$1', ['filter' => 'auth']);
+$routes->post('/admin/movies/edit-movie/', 'Movies::update', ['filter' => 'auth']);
+
+//admin - screenings
+$routes->get('/admin/screenings', 'Admin::screenings', ['filter' => 'auth']);
+$routes->get('/admin/screenings/add', 'Screenings::add_screening', ['filter' => 'auth']);
+$routes->post('/admin/screenings/add-screening', 'Screenings::insert', ['filter' => 'auth']);
+$routes->get('/admin/screenings/edit/(:num)', 'Screenings::edit_screening/$1', ['filter' => 'auth']);
+$routes->post('/admin/screenings/edit-screening/', 'Screenings::update', ['filter' => 'auth']);
+$routes->get('/admin/screenings/delete/(:num)', 'Screenings::delete/$1', ['filter' => 'auth']);
+
+//admin - studios
+$routes->get('/admin/studios', 'Admin::studios', ['filter' => 'auth']);
+$routes->get('/admin/studios/add', 'Studios::add_studio', ['filter' => 'auth']);
+$routes->post('/admin/studios/add-studio', 'Studios::insert', ['filter' => 'auth']);
+$routes->get('/admin/studios/edit/(:num)', 'Studios::edit_studio/$1', ['filter' => 'auth']);
+$routes->post('/admin/studios/edit-studio/', 'Studios::update', ['filter' => 'auth']);
+$routes->get('/admin/studios/delete/(:num)', 'Studios::delete/$1', ['filter' => 'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

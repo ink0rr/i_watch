@@ -12,7 +12,7 @@
                                 <tbody class="mt-0">
                                     <tr>
                                         <td class="attribute pr-2" rowspan="5">
-                                            <img class="img" style="width:auto; height:250px" src="<?= base_url("uploads/movies/{$reservation[0]['movie_id']}.jpg") ?>" alt="<?= $reservation[0]['title'] ?>">
+                                            <img class="img" style="width:auto; height:250px" src="<?= base_url("uploads/movies/{$reservation[0]['image']}") ?>" alt="<?= $reservation[0]['title'] ?>">
                                         </td>
                                     </tr>
                                     <tr class="border-bottom">

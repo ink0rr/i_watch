@@ -16,7 +16,7 @@
                             <input type="hidden" class="price" data-harga="<?= $row['price'] ?>">
                             <div class="row border-bottom border-muted">
                                 <div class="col-2">
-                                    <img src="<?= base_url("uploads/movies/{$row['movie_id']}.jpg") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
+                                    <img src="<?= base_url("uploads/movies/{$row['image']}") ?>" alt="Image <?= $row['movie_id'] ?>" width="100%" class="img-fluid mt-1 rounded">
                                 </div>
                                 <div class="col-10 ">
                                     <h5 class="mb-0 fw-bold" style="color:#4C3575">

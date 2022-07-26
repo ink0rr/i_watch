@@ -35,6 +35,9 @@ class Auth extends BaseController
                     ->first();
 
                 $this->setUserSession($user);
+                if ($user['status'] ==  1) {
+                    return redirect()->to(base_url('/admin'));
+                }
                 return redirect()->to(base_url());
             }
         }
@@ -92,6 +95,7 @@ class Auth extends BaseController
             'id' => $user['id'],
             'name' => $user['name'],
             'email' => $user['email'],
+            'status' => $user['status'],
             'isLoggedIn' => true,
         ]);
     }

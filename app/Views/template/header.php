@@ -50,8 +50,18 @@
                                         <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> <?= session()->get('name') ?>
                                     </span>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="<?= base_url('/tiket') ?>">Tiket Anda</a></li>
-                                        <li><a class="dropdown-item" href="<?= base_url('/riwayat') ?>">Riwayat Pemesanan</a></li>
+                                        <?php
+                                        if (session()->get('status') == 1) {
+                                        ?>
+                                            <li><a class="dropdown-item" href="<?= base_url('/admin') ?>">Dashboard</a></li>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <li><a class="dropdown-item" href="<?= base_url('/tiket') ?>">Tiket Anda</a></li>
+                                            <li><a class="dropdown-item" href="<?= base_url('/riwayat') ?>">Riwayat Pemesanan</a></li>
+                                        <?php
+                                        }
+                                        ?>
                                         <li><a class="dropdown-item" href="<?= base_url("/logout") ?>">Logout</a></li>
                                     </ul>
                                 </div>
@@ -95,8 +105,18 @@
                                         <img class="img rounded-circle" style="width:35px" src="<?= base_url("assets/images/placeholder-user.png") ?>"> <?= session()->get('name') ?>
                                     </span>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="<?= base_url('/tiket') ?>">Tiket Anda</a></li>
-                                        <li><a class="dropdown-item" href="<?= base_url('/riwayat') ?>">Riwayat Pemesanan</a></li>
+                                        <?php
+                                        if (session()->get('status') == 1) {
+                                        ?>
+                                            <li><a class="dropdown-item" href="<?= base_url('/admin') ?>">Dashboard</a></li>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <li><a class="dropdown-item" href="<?= base_url('/tiket') ?>">Tiket Anda</a></li>
+                                            <li><a class="dropdown-item" href="<?= base_url('/riwayat') ?>">Riwayat Pemesanan</a></li>
+                                        <?php
+                                        }
+                                        ?>
                                         <li><a class="dropdown-item" href="<?= base_url("/logout") ?>">Logout</a></li>
                                     </ul>
                                 </div>

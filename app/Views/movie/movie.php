@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="d-grid">
-                                <img class="movie-cover" src="<?= base_url("uploads/movies/{$movie['id']}.jpg") ?>" alt="<?= $movie['title'] ?>">
+                                <img class="movie-cover" src="<?= base_url("uploads/movies/{$movie['image']}") ?>" alt="<?= $movie['title'] ?>">
                             </div>
                         </div>
                         <div class="col-md-9">

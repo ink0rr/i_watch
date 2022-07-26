@@ -60,7 +60,7 @@
             <button class="btn btn-warning btn-block" type="reset"><i class="fa-solid fa-arrows-spin"></i> Reset Input</button>
         </div>
         <div class="col-6">
-            <button class="btn btn-success btn-block" type="submit"><i class="fa-solid fa-plus"></i> Tambah Movie</button>
+            <button class="btn btn-success btn-block" type="submit"><i class="fa-solid fa-plus"></i> Edit Movie</button>
         </div>
         <div class="col-6">
 
